@@ -1,4 +1,95 @@
-body{
+/* Osnovne postavke i boje */
+        :root {
+            --light-green: #e8f5e9;
+            --main-green: #66bb6a;
+            --dark-green: #2e7d32;
+            --pink: #ff4081;
+            --text-color: #333;
+        }
 
-    background-color:antiquewhite;
-}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-green);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Zaglavlje (Header) */
+        header {
+            background-color: var(--main-green);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* Glavni sadržaj */
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .intro {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: var(--dark-green);
+        }
+
+        /* Rešetka s karticama (Grid) */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Dizajn pojedinačne kartice */
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-bottom: 5px solid var(--main-green);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 20px rgba(0,0,0,0.1);
+            border-bottom: 5px solid var(--pink);
+        }
+
+        .card .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h2 {
+            color: var(--dark-green);
+            margin-top: 0;
+        }
+
+        /* Podnožje (Footer) */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--dark-green);
+            color: white;
+            margin-top: 4rem;
+        }
