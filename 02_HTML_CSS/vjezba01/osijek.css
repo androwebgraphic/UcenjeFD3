@@ -3,11 +3,12 @@
 body{
 
     background-color: antiquewhite;
+    font-size: 68%;
    
 }
 
  h1{
-        color: white;
+        color: black;
         text-align: center;
         font-family: sans-serif;
     }
@@ -15,16 +16,19 @@ body{
 h2{
 
     color: #b69870;
+    font-size: 1.5rem;
 }
 /*selektor klase*/
 .naslov{
-
+    font-size: 3rem;
     color: #55557f;
 }
 
 div p{
 
     color: #4b7d;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
 }
 /*selector identifikacije #*/
 #sadrzaj{
@@ -38,6 +42,10 @@ ul{
 }
 
 ul li::before{
-
-    content:'⚽';
+    font-size: 3rem;
+    content:'🤾🏻‍♂️';
+}
+ul li:nth-child(2):before{
+    font-size: 1.5rem;
+    content: '⚽';
 }
