@@ -7,28 +7,28 @@ body{
 }
 
  h1{
-        color: #ff00ff;
+        color: white;
         text-align: center;
         font-family: sans-serif;
     }
 
 h2{
 
-    color: blue;
+    color: #b69870;
 }
 /*selektor klase*/
 .naslov{
 
-    color: green;
+    color: #55557f;
 }
 
 div p{
 
-    color: aqua;
+    color: #4b7d;
 }
 /*selector identifikacije #*/
 #sadrzaj{
-
+color: #93aba1;
 font-family: sans-serif;
 }
 
