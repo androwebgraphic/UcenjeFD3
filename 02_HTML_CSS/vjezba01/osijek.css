@@ -1,11 +1,14 @@
 
 /*Selektor elementa*/
 body{
-
+    min-width: 320px;
+    max-width: 1244px;
     background-color: antiquewhite;
-    font-size: 68%;
-   
+    /* font-size: 68%; */
+    margin: 0 auto;
+    padding: 0;
 }
+
 
  h1{
         color: black;
@@ -17,6 +20,7 @@ h2{
 
     color: #b69870;
     font-size: 1.5rem;
+    font-weight: bold;
 }
 /*selektor klase*/
 .naslov{
@@ -45,7 +49,8 @@ ul li::before{
     font-size: 3rem;
     content:'🤾🏻‍♂️';
 }
-ul li:nth-child(2):before{
+/*drugi elemnt ul-a ima drugi emoji*/
+ul li:nth-child(2)::before{
     font-size: 1.5rem;
     content: '⚽';
 }
