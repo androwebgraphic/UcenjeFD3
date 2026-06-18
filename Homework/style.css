@@ -10,10 +10,11 @@ body {
 #Wrap {
 	width: 60%;
 	background-color: #fff;
-	border: 1px solid #858383;
+	border: 1px solid #ccc;
 	border-radius: 5px;
 	margin: auto;
 	padding: 4rem;
+	box-shadow: 0 0 8px #a4a5a5;
 }
 #Wrap p span:nth-child(1) {
 	background-color: #feeaa7;
@@ -29,9 +30,15 @@ h1 {
 	text-shadow:3px 3px 2px #a4a5a5;
 }
 h2.sub-head {
+	/* display: inline-block; */
+	font-size: 2rem;
 	font-family: serif;
 	font-style: italic;
-	align-content: center;
+	width: max-content;
+	margin: 0  auto;
+	/* margin-left: 10rem; */
+	border-bottom: 2px solid #e67d23;
+	
 }
 h2 {
 	color: #7f8c8d;
@@ -44,20 +51,25 @@ h3 {
 	font-size: 1.7rem;
 	color: black;
 }
-hr {
-	color: #e67d23;
-	width: 67%;
-}
+
 p {
 	color: var(--para-color);
 	font-family: sans-serif;
-	font-size: 1.5rem;
-	line-height: 2rem;
+	font-size: 1.2rem;
+	line-height: 1.5rem;
 }
+.definition{
+
+	width: max-content;
+	margin:  2rem 0 auto;
+	border-bottom: 2px solid #e67d23;
+
+}
+
 
 figure {
     margin: 0;
-	padding: 1.5rem;
+	padding: .8rem;
 	background-color: #fafafa;
 	border: 1px solid #ececec;
 	border-radius: 0.4rem;
@@ -117,7 +129,7 @@ dt span {
 	font-weight: bold;
 	color: #3498db;
 }
-#Phylosophy{
+#Phylosophy article{
    padding: 1rem;
     /* padding-left: 1rem; */
     background-color:#ffe6e6 ;
@@ -141,6 +153,10 @@ dt span {
 
     margin-right: 2.5rem;
 }
+.dotted{
+
+	border: none;
+}
 footer{
     display: flex;
     flex-direction: column;
@@ -162,11 +178,11 @@ span.contact{
     /* text-decoration:wavy; ne pokazuje */
     text-decoration: underline wavy #e67d23; /* Position, Style, Color */
     text-underline-offset: 8px;              /* Optional: Adjusts space between text and line */
-    text-decoration-thickness: 4px;
+    text-decoration-thickness: 2px;
 
 
 }
 small{
     margin-top: 2rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
