@@ -10,15 +10,21 @@
 	<body>
 		<!-- Ovo je  moj način nazivanja elemenata, id, classa isključivo na  Engleskom i uvijek prvi element u body je #Wrap(omotač) a sve  drugo ide  u njega-->
 		<div id="Wrap">
+			<header>
+				<nav id="Main-nav">
+					<ul>
+						<li><a href="#Version-info">Ključne verzije </a></li>
+						<li><a href="#Document-structure">Struktura html </a></li>
+						<li><a href="#Important-terms">Važni pojmovi </a></li>
+						<li><a href="#Phylosophy">Filozofija Web-a </a></li>
+					</ul>
+				</nav>
+			</header>
 			<section id="Intro">
 				<h1>Povijest html-a</h1>
-				
-				<h2 class="sub-head">
-					
-					Od jednostavnog texta do modernog Weba
-					
-				</h2>
-			
+
+				<h2 class="sub-head">Od jednostavnog texta do modernog Weba</h2>
+
 				<p style="margin-top: 6rem">
 					Sve je počelo 1989. godine u CERN-u. Tim Berners-Lee je smislio sustav
 					koji bi istraživačima omogućio dijeljenje dokumenata.
@@ -39,12 +45,11 @@
 				</figure>
 				<p class="definition">
 					Jezik koji je definirao strukturu tih dokumenata nazvan je
-					 <strong style="color: #e67d23"> HTML </strong> (HyperTextMarkupLanguage)
-						
+					<strong style="color: #e67d23"> HTML </strong>
+					(HyperTextMarkupLanguage)
 				</p>
-			
 			</section>
-		
+
 			<h3>Ključne verzije</h3>
 			<section id="Keyversions">
 				<article id="Version-info">
@@ -72,15 +77,17 @@
 						Revolucija. Multimedija bez dodataka ('video', 'audio'), semantički
 						elementi
 					</dd>
-				</article><!-- end  of Version-info-->
-			</section><!--end of Keyversions-->
+				</article>
+				<!-- end  of Version-info-->
+			</section>
+			<!--end of Keyversions-->
 			<section id="Document-structure">
 				<article>
 					<h3>Sruktura Dokumenata</h3>
 					<p>Osnovna struktura HTML5 dokumenta izgleda ovako:</p>
 					<div class="structure">
 						<code>
-			<pre style="margin-left: 1.6rem">
+							<pre style="margin-left: 1.6rem">
 	
 	&lt!DOCTYPE html&gt
 	&lthtml lang="hr"&gt
@@ -96,15 +103,17 @@
 	&lt/body&gt
 
 	&lt/html&gt
-	</pre>
+	</pre
+							>
 						</code>
 					</div>
 					<!--end of structure-->
 					<p>Da biste spremili ovaj kod, pritisnite ctr + s na tipkovnici</p>
-<h3>primjer html-a</h3>
-											<img  style="width:100%; height:auto; border-radius:6rem .8rem;" src="img/neandertal.jpg" alt="anatomija  html-a">
-
-
+					<h3>primjer html-a</h3>
+					<img
+						style="width: 100%; height: auto; border-radius: 6rem 0.8rem"
+						src="img/neandertal.jpg"
+						alt="anatomija  html-a" />
 				</article>
 			</section>
 
@@ -113,11 +122,12 @@
 					<h3>Važni pojmovi</h3>
 					<ul class="terms">
 						<li>
-							<span>HTTP</span>HyperText Transfer Protocol - protokol za prijenos
-							podataka.
+							<span>HTTP</span>HyperText Transfer Protocol - protokol za
+							prijenos podataka.
 						</li>
 						<li>
-							<span>URI</span> Uniform Resource Identifier - adresa resursa na Webu.
+							<span>URI</span> Uniform Resource Identifier - adresa resursa na
+							Webu.
 						</li>
 					</ul>
 				</article>
@@ -127,25 +137,25 @@
 				<h3>Fiozofija Web-a</h3>
 				<article>
 					<p>
-						Snaga Weba je u njegovoj univerzalnosti. Pristup svima, bez obzira na
-						invaliditet, ključni je aspekt.
+						Snaga Weba je u njegovoj univerzalnosti. Pristup svima, bez obzira
+						na invaliditet, ključni je aspekt.
 					</p>
 					<p>-Tim Barnes-Lee</p>
 				</article>
-			
-			<!--end of Psylosophy-->
-			<ul class="dots">
-				<li>.</li>
-				<li>.</li>
-				<li>.</li>
-				<li>.</li>
-				<li>.</li>
-			</ul>
-			<p>Danas HTML koristimo zajedno s CSS-om i JavaScriptom</p>
-			<p>
-				Japanski naziv za Web<span style="background: none"> 網 </span>(Mreža)
-			</p>
-			<hr class="dotted" style="border-bottom: 2px dotted #dbdbdb ;"/>
+
+				<!--end of Psylosophy-->
+				<ul class="dots">
+					<li>.</li>
+					<li>.</li>
+					<li>.</li>
+					<li>.</li>
+					<li>.</li>
+				</ul>
+				<p>Danas HTML koristimo zajedno s CSS-om i JavaScriptom</p>
+				<p>
+					Japanski naziv za Web<span style="background: none"> 網 </span>(Mreža)
+				</p>
+				<hr class="dotted" style="border-bottom: 2px dotted #dbdbdb" />
 			</section>
 			<footer>
 				<p>
@@ -154,10 +164,16 @@
 					>
 				</p>
 				<p>
-					Kontakt:<span class="contact" style="background: none">info@povijesthtml.org</span>
+					Kontakt:<span class="contact" style="background: none"
+						>info@povijesthtml.org</span
+					>
 				</p>
 				<p>27.listopada 2023.</p>
 				<small>&copy Sva prava pridržana.</small>
+				<a href="#Top">
+					<img src="img/up.png" alt="na vrh stranice">
+					Na vrh
+				</a>
 			</footer>
 		</div>
 		<!--End of Wrap-->
