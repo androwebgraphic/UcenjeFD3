@@ -7,7 +7,12 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: var(--bg-color);
+	box-sizing: border-box;
 }
+/* html{
+
+	font-size: 62.5%;
+} */
 #Wrap {
 
 	min-width: 320px;
@@ -65,7 +70,7 @@ h1 {
 }
 h2.sub-head {
 	/* display: inline-block; */
-	font-size: 2rem;
+	font-size:1.909;
 	font-family: serif;
 	font-style: italic;
 	width: max-content;
