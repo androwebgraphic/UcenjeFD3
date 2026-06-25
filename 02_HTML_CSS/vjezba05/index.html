@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<style>
+			object {
+				border: 3px solid blue;
+				min-width: 500px;
+				min-height: 300px;
+				border-radius: 10px;
+			}
+		</style>
+		<title>Multimedija</title>
+	</head>
+	<body>
+		<audio controls src="pjesma.mp3">Pjesma</audio>
+		<hr />
+		<video controls src="video.mp4" id="edunova" poster="poster.png">
+			Vaš preglednik ne omogučava reprodukciju sadržaja
+		</video>
+
+		<hr />
+
+		<object data="https://edunova.hr" type="text/html"></object>
+		<hr />
+
+		<object data="document.pdf" type="application/pdf"></object>
+		<hr />
+
+		<iframe
+			width="560"
+			height="315"
+			src="https://www.youtube.com/embed/BERFZja9wb0?si=_VPQCriAVjeSJaJA"
+			title="YouTube video player"
+			frameborder="0"
+			allow="
+				accelerometer;
+				autoplay;
+				clipboard-write;
+				encrypted-media;
+				gyroscope;
+				picture-in-picture;
+				web-share;
+			"
+			referrerpolicy="strict-origin-when-cross-origin"
+			allowfullscreen></iframe>
+
+		<hr />
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d84566.69829374498!2d16.177588353547122!3d45.756615144891036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2shr!4v1782406477315!5m2!1sen!2shr"
+			width="600"
+			height="450"
+			style="border: 0"
+			allowfullscreen=""
+			loading="lazy"
+			referrerpolicy="strict-origin-when-cross-origin"></iframe>
+	</body>
+</html>
