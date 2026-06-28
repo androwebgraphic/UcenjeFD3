@@ -3,6 +3,10 @@
   --accent-color: #8b0100;
   --bg-color: #f5e4d4;
 }
+html{
+
+  font-size:62.5%;
+}
 
 body {
 
@@ -28,7 +32,7 @@ header {
 
 
   h1 {
-    font-size: 2.4rem;
+    font-size: 4rem;
       text-align: center;
     color: var(--accent-color);
     border: none;
@@ -36,7 +40,7 @@ header {
 
   h3 {
 
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     font-weight: normal;
       text-align: center;
     color: rgb(129, 128, 128);
@@ -65,7 +69,7 @@ ul{
 
 li a{
 
-  font-size: 1.4rem;
+  font-size: 2rem;
   font-weight: 600;
   text-decoration: none;
   color: white;
@@ -76,7 +80,7 @@ li a{
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   color: rgb(66, 65, 65);
 }
 
@@ -92,7 +96,7 @@ section {
   margin: 1rem 1rem 1rem 1rem;
 }
   h1{
-
+    font-size: 10rem;
    grid-column: 1/-1;
     margin: 0;
   }
@@ -133,18 +137,19 @@ video{
 }
 h1 {
 /* flex: 4; */
-align-self: flex-start;
+/* align-self: flex-start */
   margin: 0 0 2rem 0;
-  font-size: 1.6rem;
+  font-size: 3rem;
   border-left: .344rem solid var(--accent-color);
   padding: 0 0 0 .6rem;
 }
 cite{
-  width: 6em;
+  width: 6rem;
+  font-size: 1.7rem;
 ;
   /* flex: 1; */
   background-color:#f9f9f9;
-  padding: .6rem;
+  padding: 3rem;
   border-left:.3rem solid #a5a5a5 ;
 }
 table{
@@ -158,7 +163,10 @@ table{
     background-color: var(--accent-color);
     color: white;
   }
+tr,td{
 
+  font-size: 2rem;
+}
   td{
 
     border: .1rem solid #ccc;
@@ -170,14 +178,14 @@ form{
 
 input{
 
-  height: 2rem;
+  height: 3em;
   &::placeholder{
     text-align: left;
   }
 }
 input,textarea{
   width: 100%;
-  margin: .6rem 0 .6rem 0;
+  margin: 1rem 0 3rem 0;
   border: .1rem solid #ccc;
   font-size: 1rem;
 
@@ -185,23 +193,32 @@ input,textarea{
 }
 legend{
 
-  font-size:1.4rem ;
-  margin-bottom: .6rem;
+  font-size:2rem ;
+  margin-bottom: 0rem;
 }
 }
 button{
   margin: .5rem 0;
-  padding: .5rem;
+  padding: .8rem;
   background-color: var(--accent-color);
-  font-size: 1rem;
+  font-size: 2rem;
   color: white;
   border: none;
-  border-radius: .2rem;
+  border-radius: .4em;
   align-self: flex-start;
+}
+button::after{
+
+content: '🕊️';
+  font-size:2rem; /* Adjust this value to make it bigger or smaller */
+  
+  /* Optional: If you need to fix the alignment after sizing it up */
+  display: inline-block;
+  vertical-align: middle; 
+  margin-left: 8px; /* Adds space between*/
 }
 footer p{
 text-align: center;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #535050;
-  /* text-align: center; */
 }
