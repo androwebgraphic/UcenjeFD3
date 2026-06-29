@@ -304,10 +304,7 @@ select{
   background-color: var(--lightrt-grey);
   color: #cbff00;
 
-  option:{
 
-    color: #cbff00;
-  }
 }
 }
 footer{
