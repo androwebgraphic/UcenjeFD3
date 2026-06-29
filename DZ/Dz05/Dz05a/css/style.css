@@ -1,0 +1,144 @@
+:root{
+ --cta: #2663eb;
+
+}
+html{
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  height: 100%;
+}
+body{
+  height: 100%;
+
+  background-color: #ffffff;
+}
+#Wrap{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 80%;
+  margin:0 auto;
+  background-color:#f0f0f0;
+  align-content: center;
+}
+ img{
+  margin-top: 4rem;
+    align-self: center;
+    width: 8rem;
+    height: auto;
+  }
+.form-container{
+
+  /* background-color: aqua; */
+  width: 50%;
+  margin: 0 auto;
+  padding: 1rem;
+
+ 
+form{
+  /* width: 60%; */
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-self: center;
+  /* align-items: center; */
+  background-color: white;
+  margin-top: 3rem;
+  padding: 2rem;
+  border-radius: 1.2rem;
+
+span{
+
+  font-size: 1.2rem;
+}
+  fieldset, input{
+  
+    border: .15rem solid #ccc;
+    border-radius: .5rem;
+  }
+
+  legend p{
+
+    font-size: 1.7rem;
+    color: rgb(50, 50, 50);
+    font-weight:50;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  legend{
+    
+    margin: .5rem 0 .5rem 0;
+    color: #636363;
+    font-size: 1.6rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  input{
+    width: 95%;
+    font-size: 1.3rem;
+    height: 3rem;
+
+  }
+  input[type="checkbox"]{
+    /* flex: 1; */
+    margin: 0;
+    padding: 0;
+    width: 1.3rem;
+  }
+
+  button{
+    width: 100%;
+    background-color: var(--cta);
+    border: none;
+    border-radius: .2rem;
+    color: white;
+    font-size: 1.4rem;
+    padding: .8rem;
+  }
+}
+}
+h2{
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  color:#636363;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+table{
+  border-collapse: collapse;
+
+margin-top: 1rem;
+
+th, td{
+  margin: 0 0 .3rem 0;
+}
+  border: none;
+}
+  th{
+    padding: 1rem;
+    background-color:#f9fafb ;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+        border-bottom: .2rem solid  #ccc;
+
+  }
+  td{
+   
+    padding: 1rem;
+    font-size: 1.7rem;
+    border-bottom: .2rem solid  #ccc;
+    background-color: #fff;
+    text-align: center;
+  }
+  .greska{
+
+    color: red;
+  }
+  .uspjeh{
+
+    color: green;
+  }
+}

@@ -154,7 +154,7 @@ cite{
 }
 table{
   width: 100%;
-  /* border: .1rem solid #ccc; */
+  border-collapse: collapse;
   margin: 0;
   padding: 0;
 
