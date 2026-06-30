@@ -34,7 +34,10 @@ body {
 }
 
 header {
-
+/* background-image: url('os.jpg');
+background-repeat: no-repeat;
+background-position: top center;
+background-size: contain; */
 
 	background-color: #00539c;
 	justify-content: space-around;
