@@ -216,9 +216,9 @@ table{
 
 align-self:center;
 
-
+border-collapse: collapse;
   th{
- 
+ width: 20%;
     /* flex: 1; */
     color: var(--dark-grey);
     background-color: var(--lime-green);
@@ -227,6 +227,7 @@ align-self:center;
     span{
 text-align: left;
 margin:0 5rem 0  8rem;
+
 
     }  
   }
