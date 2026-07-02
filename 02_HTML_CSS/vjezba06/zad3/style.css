@@ -144,4 +144,9 @@ th, td{
     text-align: center;
     
   }
- 
+td button{
+
+  background-color: transparent;
+  color: red;
+
+ }

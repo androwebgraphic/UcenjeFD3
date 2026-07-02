@@ -8,93 +8,84 @@
 </head>
 <body>
   <div id="Wrap">
+  <main>
+    <!-- Sekcija za unos novog korisnika -->
+    <h1>Novi Korisnik</h1>
+    <form action="POST">
+    
+      <label switch for="ime">Ime i prezime:</label>
+      <input type="text" id="ime" name="ime" placeholder="npr. Ana Anić" required aria-required="true">
+      
+      <label for="mail">Email adresa:</label>
+      <input type="email" name="mail" id="mail" placeholder="npr. ana@gmail.com" required aria-required="true">
+      
+      <label for="odaberi">Uloga</label>
+      <select name="odaberi" id="odaberi" required aria-required="true">
+        <option value="" disabled selected>Odaberi...</option>
+        <option value="administrator">Administrator</option>
+        <option value="urednik">Urednik</option>
+        <option value="korisnik">Korisnik</option>
+      </select>
+      
+      <button type="submit">Spremi korisnika</button>
+    </form>
+    
+    <hr>
 
-
-      <main>
-        <h1>Novi Korisnik</h1>
-        <form action="POST">
-        
-        <label for="ime">Ime  i prezime:</label>
-        <input type="text" placeholder="npr.Ana Anić">
-        
-        <label for="email">Email adresa:</label>
-        <input type="email" name="mail" id="mail" placeholder="npr. ana@gmail.com">
-        <label for="uloga"> Uloga</label>
-        <select name="odaber" id="odaberi">
-          <option value="" disabled >Odaberi</option>
-          <option value="administratorr"> Administrator</option>
-        <option value="Urednik"> Urednik</option>
-          <option value="korisnik"> Korisnik</option>
-        
-        
-        
-        </select>
-        
-        <button>Spremi korisnika</button>
-        
-        </form>
-        
-          <h1>Lista korisnika</h1>
-        <table>
-          <thead>
-          
-          
-            <tr>
-          <caption>
-            <colgroup></colgroup>
-            <colgroup></colgroup>
-            <colgroup></colgroup>
-            <colgroup></colgroup>
-            <colgroup></colgroup>
-          
-          
-            <thead>
-            <tr>
-          <th>ID</th>
-          <th>IME I PREZIME</th>
-          <th>EMAIL</th>
-          <th>ULOGA</th>
-          <th>AKCIJA</th>
-          
-          
-          </tr>
-        <tbody>
-          <tr>
-            <tr>
-              <td>1</td>
-              <td>Ivan Horvat</td>
-              <td>ivan@tvrtka.hr</td>
-              <td>Administrator</td>
-              <td>Obriši</td>
-            </tr>
-          <tr>
-            <td>2</td>
-            <td>Marko Marić</td>
-            <td>marko@tvrtka.hr</td>
-            <td>Urednik</td>
-            <td>Obriši</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Petra Perič</td>
-            <td>petra@tvrtka.hr</td>
-            <td>Korisnik</td>
-            <td>Obriši</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Luka Lukić</td>
-            <td>luka@tvrtka.hr</td>
-            <td>Korisnik</td>
-            <td>Obriši</td>
-          </tr>
-        </tbody>
-          
-          </thead>
-          </caption>
-        </table>
-      </main>
-  </div>
+    <!-- Sekcija s listom korisnika -->
+    <h1>Lista korisnika</h1>
+    <table>
+      <caption aria-label="Popis registriranih korisnika s njihovim ulogama i opcijama upravljanja"></caption>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">IME I PREZIME</th>
+          <th scope="col">EMAIL</th>
+          <th scope="col">ULOGA</th>
+          <th scope="col">AKCIJA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Ivan Horvat</td>
+          <td>ivan@tvrtka.hr</td>
+          <td>Administrator</td>
+          <td>
+            <button aria-label="Obriši korisnika Ivan Horvat">Obriši</button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Marko Marić</td>
+          <td>marko@tvrtka.hr</td>
+          <td>Urednik</td>
+          <td>
+            <button aria-label="Obriši korisnika Marko Marić">Obriši</button>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Petra Perić</td>
+          <td>petra@tvrtka.hr</td>
+          <td>Korisnik</td>
+          <td>
+            <button aria-label="Obriši korisnika Petra Perić">Obriši</button>
+          </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Luka Lukić</td>
+          <td>luka@tvrtka.hr</td>
+          <td>Korisnik</td>
+          <td>
+            <button aria-label="Obriši korisnika Luka Lukić">Obriši</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</div>
   
 </body>
 </html>
