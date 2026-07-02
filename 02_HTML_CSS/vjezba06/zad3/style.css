@@ -1,0 +1,147 @@
+:root{
+
+  --bg-color:#f5f7f6;
+  --form-bg:white;
+  --btn-bg:#28a745;
+
+}
+body{
+
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+
+  font-size: 62.5%;
+  height: 100%;
+}
+
+#Wrap{
+
+
+  width: 90%;
+  margin: 0 auto;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+main{
+
+  width: 60%;
+  margin-top: 3rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+ align-self: center;
+
+
+}
+h1{
+  text-align: left;
+  width: 14rem;
+  font-size:  0 0 2rem 0;
+  border-bottom: .2rem solid #027bff;
+
+
+}
+form{
+
+  display: flex;
+  flex-direction: column;
+   background-color: white;
+   padding: 2rem 0 0 2rem;
+   margin-bottom: 10rem;
+   border-radius: 1.2rem;
+
+
+
+  
+ 
+}
+select#odaberi{
+
+
+  background-color: white;
+  font-size: 1.6rem;
+  border-radius: .6rem;
+  border: .2rem solid lightgrey;
+  padding: .3rem;
+  margin-bottom: 1.6rem;
+}
+label{
+
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: .6rem;
+}
+input{
+
+  font-size: 1.6rem;
+  border-radius: .6rem;
+  border: .2rem solid lightgrey;
+  padding: .3rem;
+  margin-bottom: 1.6rem;
+}
+
+button{
+  margin: 0rem 0 1rem 0;
+  color: white;
+  background-color: var(--btn-bg);
+  border: none;
+  border-radius: .6rem;
+
+  padding: .5rem;
+  font-size: 1.6rem;
+  width: 15rem;
+}
+
+
+
+
+table{
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+
+/* margin-top: 3rem; */
+border-collapse: collapse;
+width: 100%;
+
+th, td{
+  margin: 0 0 .3rem 0;
+
+     border-bottom: .1rem solid  #ccc;
+}
+}
+ tr:nth-child(odd){
+
+    background-color: rgb(237, 237, 237);
+  }
+   tr:nth-child(even){
+
+    background-color: white;
+  }
+  th{
+    padding: 1.2rem;
+    background-color:#317bff ;
+    color: white;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+   
+
+  }
+  td{
+
+   
+    padding: 1rem;
+    font-size: 1.7rem;
+    border-bottom: .2rem solid  #ccc;
+    /* background-color: #fff; */
+    text-align: center;
+    
+  }
+ 
