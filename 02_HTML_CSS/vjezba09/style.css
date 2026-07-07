@@ -1,113 +1,89 @@
 body{
-
-  background-color: antiquewhite;
+    background-color: antiquewhite;
 }
 
 ul{
-
-  list-style-type: none;
-  display: flex;
-  gap:2rem;
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
 }
 
 ul li{
-  text-align: center;
+    text-align: center;
 }
 
 ul li a{
-
-  text-decoration: none;
-  color: black;
-  font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
 }
 
 .panel{
-
-  border: 1px solid black;
-  min-height: 300px;
-  /* font-size: 2rem; */
-  text-align: justify;
-  padding: 1.5em;
+    border: 1px solid black;
+    min-height: 300px;
+    /* font-size: 2rem; */
+    text-align: justify;
+    padding: 1.5em;
 }
 
-.a{
+.a{grid-area: a;}
+.b{grid-area: b;}
+.c{grid-area: c;}
+.d{grid-area: d;}
 
-  grid-area: a;
-}
-.b{
-
-  grid-area: b;
-}
-.c{
-  grid-area: c;
-}
-.d{
-
-  grid-area: d;
-}
 /* Tablet */
-@media screen and (min-width:550px)  and (max-width:800px){
+@media (min-width: 550px) and (max-width: 800px) {
+    body{
+        background-color: beige;
+    }
 
-  body{
+    main{
+        display: grid;
+        grid-template-areas: 
+        "a b"
+        "c c"
+        "d d"
+        ;
+    }
 
-    background-color: beige;
-  }
-  main{
-
-    display: grid;
-    grid-template-areas: 
-    "a b"
-    "c c"
-    "d d"
-    ;
-  }
-
-  .panel{
-
-    font-family: sans-serif;
-  }
-  
+    .panel{
+        font-family: sans-serif;
+    }
 }
 
-/* Desktop  i više*/
+/* Desktop i više */
+@media (min-width: 801px){
+    body{
+        background-color: chocolate;
+    }
 
-@media (min-width:801px) {
-  body{background-color: chocolate;}
-
-  main{
-    display: grid;
-    grid-template-areas: 
-
-    "a b c"
-    "d d d ";
-  }
+    main{
+        display: grid;
+        grid-template-areas: 
+        "a b c"
+        "d d d";
+    }
 }
+
 
 @media print{
-
-  header{
-
-    display: none;
-  }
-  main{
-
-  display: grid;
-  grid-template-areas: 
-
-  "a"
-  "b"
-  "c"
-  "d"
-  ;
-  }
-
+    header{
+        display: none;
+    }
+    main{
+        display: grid;
+        grid-template-areas: 
+        "a"
+        "b"
+        "c"
+        "d"
+        ;
+    }
 }
 
 @media (prefers-color-scheme: dark){
-
-  ul li  a{background-color: black;
-   color: white;
-  }
+    ul li a{
+        background-color: black;
+        color: white;
+    }
 }
- 
-
