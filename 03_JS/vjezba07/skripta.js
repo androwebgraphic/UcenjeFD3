@@ -1,220 +1,171 @@
-//Nizovi, ili polja  Arrays
+// nizovi, polja, Arrays
+// nizovi su struktura podataka
+// niz omogućuje pohranjivanje više vrijednosti u jednoj varijabli
 
-const t1 = 4 // u varijabli t1 imam prosjecnu temperaturu za sjecanj
+const t1 = 4 // u varijabli t1 imam prosječnu temperaturu za siječanj
 
-
-//prazan niz
-
+// prazan niz
 const prazanNiz = []
-
 console.log('prazanNiz', prazanNiz)
 
-console.log(prazanNiz.length)
+// svaki niz ima dužinu
+console.log('prazanNiz.length', prazanNiz.length)
 
-//pohranjujem 12 prosjecnih temp za sjecanj do prosinac
-const temp = [4, 1, 9,15, 17, 27, 30, 33, 26, 18, 14, 8]
+// pohranjujem 12 prosječnih temperatura za siječanj - prosinac
+const temp = [4, 1, 9, 15, 17, 27, 30, 33, 26, 18, 14, 8,] // zadnji , može i ne mora postojati
 
-console.table('temp', temp)
+console.log('temp', temp)
+console.table(temp)
 
-console.log('prvi element niza', temp[0])
-//zadni el iz niza temp
-console.log('zadnji el niza', temp[temp.length - 1])
-//ipisati za 27 iz niza temp
- console.log(temp[5])
-//temp = []// ne  moze
- 
-//vrijednost se  mogu mijenjati
+// prvi element niza na indexu 0
+console.log('Prvi element niza', temp[0])
 
-//u lipnju nije bilo  27 vec 28
+// zadnji element niza
+console.log('Zadnji element niza', temp[temp.length - 1]) // ne moram znati konkretan broj indexa
 
+// Ispisati 27 iz niza temp
+console.log('27 iz niza temp', temp[5])
+
+// temp=[] skripta.js:29 Uncaught TypeError: Assignment to constant variable.
+
+// vrijednosti elemenata niza se mogu mijenjati!!!
+// u lipnju nije bilo 27, već 28
 temp[5] = 28
-
 console.table(temp)
 
-// skracivanje  niza
-temp.length = 10 //skrati niz na 10 elemenata
 
+// stratiti niz
+temp.length = 10 // skrati niz na 10 elemenata
 console.table(temp)
-//uvecaj niz temp za 1 element
+
+// uvećaj niz temp za jedan element
 temp.length = temp.length + 1
-
 temp[temp.length - 1] = 77
-
+console.table(temp)
 temp[110] = -1
 console.table(temp)
-
 console.log(temp[11])
-
 console.log(temp.length)
 
-
 const mjesta = [
-
-  'Osijek',
-  'Zagreb',
-  'Rijeka',
-  'Dubrovnik',
-  'Zadar'
-
+    'Osijek',
+    'Zagreb',
+    'Split',
+    'Rijeka',
+    'Dubrovnik',
+    'Zadar'
 ]
+
 console.table(mjesta)
 
-//u ozbiljnom Dev svijetu naginje  se da nizovi imaju elemente istog tipa
+// u ozbiljno dev svijetu nainje se da nizovi imaju elemente istog tip
 
-//ponavljanje tipova  podataka, niz moze  imati bilo  koji tip podtaka
+// niz može imati bilo koji tip podatka za element i mogu biti mješani
+// ponavljanje tipova podataka
 
 const ptp = [
-
-  'Edunova',// string
-  7, //number
-  18n, //bigINt
-  true, //boolean
-   Array,// Array
-  undefined,
-  null,
-  { ime: 'Pero' },// objekt
-  Symbol('e'), //Symbol
-
+    'Edunova', // string
+    7, // number
+    18n, // bigint
+    true, // boolean
+    [], // array
+    undefined,
+    null,
+    { ime: 'pero' }, // objekt
+    Symbol('e')
 ]
 
+// ispiši pero
 console.log(ptp)
 console.log(ptp[7])
 console.log(ptp[7].ime)
-console.log(ptp[7]['ime'])//necemo koristit
+console.log(ptp[7]['ime']) // nećemo ovo koristiti
 
 const osobe = [
-
-  {
-
-    ime: 'Andreas',
-    prezime: 'Sklizovic',
-    godine: 52
-  },
-
-  {
-
-    ime: 'Branka',
-    prezime: 'Sklizovic',
-    godine:82
-  },
-
-  {
-
-    ime: 'Damir',
-    prezime: 'Sklizovic',
-    godine:60
-  },
-
-  {
-
-    ime: 'Darko',
-    prezime: 'Nikolic',
-    godine:51
-  }
-
+    {
+        ime: 'Tomislav',
+        prezime: 'Jakopec',
+        godine: 45
+    },
+    {
+        ime: 'Dora',
+        prezime: 'Jakopec',
+        godine: 19
+    },
+    {
+        ime: 'Lada',
+        prezime: 'Jakopec',
+        godine: 10
+    },
+    {
+        ime: 'Mara',
+        prezime: 'Jakopec',
+        godine: 9
+    },
 ]
-
-
-
 console.table(osobe)
 
-const sumaGodina = osobe[0].godine + osobe[1].godine + osobe[2].godine + osobe[3].godine +( osobe[4]?.godine?? 0)
-
+// zbrajamo vrijednosti svojstva objekta koji se nalaze u nizu osobe
+const sumaGodina = osobe[0].godine + osobe[1].godine + osobe[2].godine + osobe[3].godine
+    + (osobe[4]?.godine ?? 0)
 console.log(sumaGodina)
 
-//Destruction
+// destrukcija
 
-const niz = [10, 20, 30] //3 elemnta
+const niz = [10, 20, 30] // tri elementa
 
-const [e1, e2] = niz //izvrsio sam destrkciju na  nacin  da je 1.el niza zavrsio varijabli
+const [e1, e2] = niz   // izvršio sam destrukciju na način da je 1. element niza završio u vrijabli e1, 2. u e2, niz je ostao kakav je bio
 
-console.log(e1,e2,niz)
+console.log(e1, e2, niz)
 
-const[,, e3] = niz
+const [, , e3] = niz
 
 console.log(e3)
 
-// .npr  Backend vrati prazan niz
-niz.length = 0
-
-const [x1=1, x2=20] = niz // kod destrukcije, varijablama se  moze  dodijeliti zadana vrijednost
-
+// npr. backend vrati prazan niz
+niz.length = 0 // na ovaj način sam očistio niz
+const [x1 = 1, x2 = 20] = niz // kod destrukcije, varijablama se može dodjeliti zadana vrijednost ako tog elemenat niza nema
 console.log(x1, x2)
 
-//Spred operator ...
 
+// spread operator ...
 const n1 = [1, 2, 3]
 
-const novi = n1//ovo  nije  kopiranje, ovo je  krreiranje reference  na  niz n1
+const novi = n1 // ovo nije kopiranje, ovo je kreiranje reference na niz n1
 
 novi[0] = 7
 
 console.log(n1)
 
-//Spred operator zapravo kopira
+// spread operator ... zapravo kopira
 
-const kopija = [...n1]// u nizu se  nalaze svi elemnti kopirani iz  niza n1
-
+const kopija = [...n1] // u nizu kopija se nalaze svi elementi kopirani za niza n1
 kopija[0] = 9
-
 console.log(kopija, n1)
 
-//spajanje  nizova
-
-const gradovi = ['Osijek', 'Zagreb']
-const sela = ['Habjanovci', 'Tenja']
-
+// spajanje nizova
+const gradovi = ['Osijek','Zagreb']
+const sela = ['Habjanovci','Tenja']
 const hr = [...gradovi, ...sela]
 console.log(hr)
 
-document.getElementById('naslov').innerHTML = hr[0]
+document.getElementById('naslov').innerHTML=hr[0]
 
-//ovo gore sve je jednodimenzionalni niz-lista
+// OVO GORE SVE je jednodimenzionalni niz - lista
 
-//nizovi mogu biti vi[edimenzionalni
-//2d matrix
+// nizovi mogu biti višedimenzionalni
+// 2D - matrix
 const tablica = [
-   
-
-  [1, 2, 3],//red s index 0
-  [4, 5, 6],//red idex 1
-  [7,8,9]//red index 2
+    [1, 2, 3], // ovo je red s indexom 0
+    [4, 5, 6], // red index 1
+    [7, 8, 9]  // red index 2
 ]
- //ispisi 6
+
+// ispiši 6
 console.log(tablica[1][2])
 
 console.table(tablica)
 
-//3d je  kocka
+// 3D je kocka
 
-//4d je  tenzor
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// 4D je tenzor
