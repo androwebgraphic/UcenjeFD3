@@ -1,142 +1,141 @@
-//Loops, petlje iteracije
+// ponavljanje (iteracije), petlje (loops)
 
+// u konzolu ispisati 10 puta Edunova jedno ispod drugog
 
-console.log('======================')
+console.log('Edunova')
+console.log('Edunova')
+console.log('Edunova')
+console.log('Edunova')
+console.log('Edunova')
+console.log('Edunova')
+console.log('Edunova')
+console.log('Edunova')
+console.log('Edunova')
+console.log('Edunova')
 
-for (let i = 0; i < 10; i++){
-  
-  console.log('Edunova')
+// OPVO GORE NIJE DOBRO RJEŠENJE i nećemo ga koristiti, naučiti ćemo bolje
+
+// klasična for petlja
+
+// for(inicijalna vrijednost brojača; uvjet izlaska iz petlje; uvećanje/umanjenje)
+
+console.log('=========================')
+
+// rješenje gornjeg zadatka
+for (let i = 0; i < 10; i++) {
+    console.log('Edunova')
 }
 
-console.log('======================')
+console.log('=========================')
 
-//unutar petlje  i= mjenja  vrijednost
+// unutar petlje i mijenja vrijednost
 
-for (let i = 0; i < 10; i++){
-  
-  console.log(`i = ${i+1}`)
-
+for (let i = 0; i < 10; i++) {
+    console.log(`i=${i + 1}`)
 }
 
-console.log('======================')
-//unutar petlje  mozemo koristiti trenutne  vrijednosti varijable
+console.log('=========================')
+
+
+// unutar petlje možemo koristiti trenutne vrijednosti varijable da s njima nešto radimo
+
 let suma = 0
 
-//odradio je  100 iteracija i dosao do 5050
-for (let i = 0; i < 100; i++){
-
-  suma += i + 1
- // debugger
-}
-console.log(suma)
-
-console.log((100 * (100 + 1)) / 2) //5050
-console.log('======================')
-
-//nekoliko primjera setanaj s pomocu FOR petlje
-//unazad za jedan
-for (let i = 10; i > 0; i--){
-
-  console.log(i)
-}
-console.log('======================')
-
-for (let i = 7; i < 20; i++){
-
-  console.log(i)
+// odradio je 100 iteracija
+for (let i = 0; i < 100; i++) {
+    suma += i + 1
+    //debugger
 }
 
-console.log('======================')
-//simuliranje unosa korisnika
+console.log(suma) // 5050
+
+console.log((100 * (100 + 1)) / 2) // 5050
+console.log('=========================')
+
+// nekoliko primjera šetanja s pomoću for petlje
+// unazad za 1
+for (let i = 10; i > 0; i--) {
+    console.log(i)
+}
+console.log('=========================')
+// manji prema većem za 2
+
+for (let i = 7; i < 20; i += 2) {
+    console.log(i)
+}
+
+console.log('=========================')
+
+// simuliram unos korisnika
 const pocetak = 7
 const kraj = 20
 const uvecanje = 2
 
-for (let i = pocetak; i < kraj; i += uvecanje){
-  
-  console.log(i)
+for (let i = pocetak; i < kraj; i += uvecanje) {
+    console.log(i)
 }
 
-console.log('======================')
-//ugnjezdivanje  petlje
-
+console.log('=========================')
+// ugnježđivanje petlje
 document.write('<table>')
-
 for (let i = 1; i <= 10; i++) {
-
-  document.write('<tr>')
-
-
-  for (let j = 1; j <= 10; j++) {
-
-    document.write(`<td> ${i * j}</td>`)
-  }
-
-
-  document.write('</tr>')
+    document.write('<tr>')
+    for (let j = 1; j <= 10; j++) {
+        document.write(`<td>${i * j}</td>`)
+    }
+    document.write('</tr>')
 }
-
 document.write('</table>')
-console.log('======================')
 
-//petlju mozemo  preskociti ili  nasilno prekinut
 
-for (let i = 0; i < 10; i++){
+// petlju (svaku) možemo preskočiti i nasilno prekinuti
 
-  if (i === 3) {
-    
-    continue//nastavlja (preskace petlju)
-  }
-  if (i === 7) {
-    
-    break //nasilno prekida
-  }
-  console.log(i)
+for (let i = 0; i < 10; i++) {
+    if (i === 3) {
+        continue //nastavlja (preskače petlju) od početka
+    }
+
+    if (i === 7) {
+        break // nasilno prekida izvođenje petlje
+    }
+
+    console.log(i)
 }
-console.log('======================')
 
-//
+console.log('=========================')
 
 const niz = [1, 2, 3, 4, 5, 6, 7]
 
-//ispisati sve  elemnte niza
-
-for (let i = 0; i < niz.length; i++){
-
-  console.log(niz[i])
+// ispisati sve elemente niza
+for (let i = 0; i < niz.length; i++) {
+    console.log(niz[i])
+}
+console.log('=========================')
+// ispisati od zadnjeg prema prvom
+for (let i = niz.length - 1; i >= 0; i--) {
+    console.log(niz[i])
 }
 
-console.log('======================')
-//ispisati od zadnjeg do prvog
+console.log('=========================')
 
-for (let i = niz.length - 1; i >= 0, i--;){
-  
-  console.log(i)
-}
-console.log('======================')
-
-//string je  niz znakova
-
+// string je niz znakova
 const ime = 'Nina'
-
-for (let i = 0; i < ime.length; i++){
-
-  console.log(ime[i],i)
+for (let i = 0; i < ime.length; i++) {
+    console.log(ime[i])
 }
 
-console.log('======================')
 
-//Beskonacna  petlja
+// beskonačna petlja
+const spavaj = (ms) => new Promise(r => setTimeout(r, ms))
+
 async function odradi(){
-const spavaj = (ms) => newPromise(r=> setTimeout(r,ms))
-for (; ;){
-
-  document.getElementById('lista').innerHTML
-    = '<li>' + (Math.floor(Math.random() * 1000) + 1) + '</li>'
- +  document.getElementById('lista').innerHTML
-  //break
-  await spavaj(500)
-}
+    for (; ;) {
+        document.getElementById('lista').innerHTML
+            = '<li>' + (Math.floor(Math.random() * 1000) + 1) + '</li>'
+            + document.getElementById('lista').innerHTML
+       break
+        await spavaj(1500)
+    }
 }
 
-
+odradi()
