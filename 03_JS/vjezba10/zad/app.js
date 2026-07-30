@@ -132,6 +132,10 @@ document.getElementById('izvedi').addEventListener('click', () => {
     case '5':
       // rješavanje 5. zadatak
 
+      const stopRijeci = [a, b, 'trcanje', 'skok']
+      console.log(stoRijeci[b])
+    
+
       // kraj rješavanje 5. zadatak
     break;
     case '6':
