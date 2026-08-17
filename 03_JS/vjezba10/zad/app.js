@@ -132,8 +132,11 @@ document.getElementById('izvedi').addEventListener('click', () => {
     case '5':
       // rješavanje 5. zadatak
 
-      const stopRijeci = [a, b, 'trcanje', 'skok']
-      console.log(stoRijeci[b])
+      // const stopRijeci = [a, b, 'trcanje', 'skok']
+      // console.log(stopRijeci[b])
+      
+      
+rezultat.innerHTML = stopRijeci[b].includes('odmah')
     
 
       // kraj rješavanje 5. zadatak
@@ -158,6 +161,8 @@ const poveznica = document.getElementById('poveznica');
 poveznica.href='https://enciklopedija.hr/clanak/primbrojevi';
 document.getElementById('zadatak').addEventListener('change', (event) => {
    switch (event.target.value) {
+
+
     case '1':
       poveznica.href='https://enciklopedija.hr/clanak/primbrojevi';
     break;
