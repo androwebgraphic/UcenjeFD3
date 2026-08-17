@@ -1,0 +1,276 @@
+:root {
+  --primary-bg: #33304f;
+
+  --secondary-bg: #f1e8e1;
+
+  --grey-violet-bg: #574c6a;
+
+  --btn-succes-bg: green;
+}
+
+
+
+body {
+  height: 100%;
+}
+
+html {
+  min-height: 100%;
+
+  /* font-size: 62.5%; */
+}
+
+#Wrap {
+  max-width: 1024px;
+  background-color: var(--primary-bg);
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+header {
+
+  background-color: #b22dc92a;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin-bottom: 3rem;
+}
+
+p {
+  padding: .6rem;
+  color: var(--primary-bg);
+  font-size:1rem;
+  line-height: 1.5rem;
+}
+ul{
+  list-style-type: none;
+}
+aside{
+  display: flex;
+  flex-direction: column;
+  flex:stretch;
+  width:25%;
+  background-color:  var(--grey-violet-bg);
+  border-radius: .6rem;
+  padding: .6rem;
+}
+
+aside nav a{
+
+  margin: .3rem 0 .3rem 0;
+  padding: .4rem;
+
+  color: var(--secondary-bg);
+
+
+}
+#Note {
+
+  background-color: var(--grey-violet-bg);
+  color: orange;
+  padding: .6rem;
+  border-radius: 1rem 0 1rem;
+
+}
+
+/*=======Header========
+=========================
+*/
+
+/*=======Top NAV=========
+=========================
+*/
+/* Stil za mobilnu traku */
+.title-bar {
+  background-color: #574c6a;
+  color: #ffffff;
+  border-radius: 12px;
+  margin: 10px;
+}
+
+/* Stil za glavnu navigaciju */
+.top-bar,
+.top-bar ul {
+  background-color: #574c6a;
+  color: #ffffff;
+}
+
+.top-bar {
+  border-radius: 12px;
+  padding: 10px;
+}
+
+/* Stil za poveznice */
+.top-bar a {
+  color: #ffffff !important;
+}
+
+.top-bar a:hover {
+
+  background-color: var(--primary-bg);
+}
+
+/* Stil za gumb */
+.top-bar .button,
+.top-bar input {
+  background-color: #ffffff;
+  color: #574c6a;
+  border-radius: 8px;
+}
+
+/*=======Main=========
+=========================
+*/
+
+main {
+  height: 100%;
+  margin: 2rem;
+  border-radius:.6rem;
+  background-color: var(--secondary-bg);
+}
+span {
+
+  color: var(--secondary-bg);
+
+}
+select{
+
+      margin: .8rem 0 .8rem 0;
+  border-radius: .6rem;
+}
+
+/* Table */
+#One {
+
+  padding: 20px;
+  margin-bottom: 1rem;
+  border-right: 1px solid var(--secondary-bg);
+}
+
+input[type="text"] {
+  /* width: 70px; */
+  padding: 5px;
+  margin-bottom: .6rem;
+  border-radius: .6rem;
+}
+
+h1 {
+  color: var(--secondary-bg);
+  text-align: center;
+}
+
+h2 {
+  color: var(--secondary-bg);
+}
+
+h3.ulaz,
+h3.izlaz {
+  padding: 1rem;
+  /* margin-left: auto; */
+  color: var(--grey-violet-bg);
+  font-weight: bolder;
+writing-mode: vertical-lr;
+  text-orientation: sideways-right; 
+    /* transform: rotate(-180deg); */
+}
+
+
+
+::placeholder {
+  text-align: center;
+}
+
+label {
+  color: var(--secondary-bg);
+  font-size: 1.2rem;
+}
+
+td {
+  border: 1px solid var(--secondary-bg);
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-bg);
+  color: var(--secondary-bg);
+
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+tr {
+
+
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+
+
+#Create {
+  padding: 5px 15px;
+  cursor: pointer;
+
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--btn-succes-bg);
+  color: var(--secondary-bg);
+}
+
+#Create:hover{
+
+  transform: scale(1.5);
+
+}
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* width: auto; */
+  margin-left: auto;
+}
+
+#btn-yes,
+#btn-no {
+
+  width: 2rem;
+  height: 2rem;
+  color: var(--secondary-bg);
+  padding: .3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: .4rem;
+
+}
+
+#btn-yes {
+
+  background-color: green;
+}
+
+#btn-no {
+
+  background-color: red;
+}
+
+#btn-yes:hover:hover,
+#btn-no:hover:hover {
+
+  transform: scale(1.2);
+  transition: ease-in-out 2ms;
+}
+#result{
+
+  font-size: 1.5rem;
+  color: var(--primary-bg);
+}
+/*=======Footer=========
+=========================
+*/
+footer {
+  background-color: var(--grey-violet-bg);
+}
+
+footer p.copy {
+  color: var(--secondary-bg);
+}
+
