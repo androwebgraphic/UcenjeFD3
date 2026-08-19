@@ -66,10 +66,10 @@ input[type="text"] {
   
     border-bottom: 1px solid var(--obrub-boja);
 }
-.tablica-podataka tr td:nth-child(5){
+/* .tablica-podataka tr td:nth-child(5){
 
   text-align: right;
-}
+} */
 .tablica-podataka th {
     background-color: #f8f9fa;
     cursor: pointer;
