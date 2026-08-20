@@ -13,8 +13,12 @@ function* tijekUpoznavanja() {
 
     const godine = yield { 
         naslov: `Drago nam je, ${ime}!`, 
-        opis: 'Koliko imaš godina?', 
-        prikaziUnos: true 
+      opis: 'Koliko imaš godina?', 
+        
+    
+      prikaziUnos: true 
+        
+
     };
   const ulica = yield { 
         naslov: ` ${ime}, treba nam adresa`, 
