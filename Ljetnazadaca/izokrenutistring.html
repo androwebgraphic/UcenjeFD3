@@ -38,7 +38,7 @@
           <li><a href="prosjekocjena.html">Prosjek ocjena</a></li>
           <li><a href="fibonaci.html">Fibonaci niz</a></li>
           <li><a href="izokrenutistring.html">Izokrenuti string</a></li>
-          <li><a href="brojanje-samoglasnika.html">Broj samoglasnika</a></li>
+          <li><a href="brojanjesamoglasnika.html">Broj samoglasnika</a></li>
           <li><a href="pretvorbatemperature.html">Temperatura F u C</a></li>
           <li><a href="sortiranjeniza.html">Sortiranje niza</a></li>
           <li><a href="kalkulator.html">Kalkulator</a></li>
@@ -73,9 +73,9 @@
         <label for="">Vrijednost A</label>
         <input type="text" id="inA">
 
-        <label for="">Vrijednost B</label>
+        <!-- <label for="">Vrijednost B</label>
 
-        <input type="text" id="inB">
+        <input type="text" id="inB"> -->
 
         <button id="Create" class="button-large">Napravi zadatak</button>
 
@@ -99,7 +99,36 @@
   <script src="js/vendor/what-input.js"></script>
   <script src="js/vendor/foundation.js"></script>
 
-  <script src="js/app.js"></script>
+  <!-- <script src="js/app.js"></script> -->
+   <script>
+ $(document).foundation()
+
+
+    let btn = document.querySelector('#Create')
+
+    let result = document.querySelector('#result')
+
+  let A = document.querySelector('#inA').value;
+
+   btn.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  const niz =Array.from(A)
+  let unazad = ""
+
+
+for(i =niz.length-1; i>=0; i--){
+  unazad += niz[i]
+
+  result.innerHTML = `<strong>Obrnuto od ${niz} je</strong> ${unazad}`
+}
+   })
+
+   </script> 
+
+
+
+ 
 </body>
 
 </html>

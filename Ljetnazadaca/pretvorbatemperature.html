@@ -39,15 +39,15 @@
           <li><a href="prosjekocjena.html">Prosjek ocjena</a></li>
           <li><a href="fibonaci.html">Fibonaci niz</a></li>
           <li><a href="izokrenutistring.html">Izokrenuti string</a></li>
-          <li><a href="brojanje-samoglasnika.html">Broj samoglasnika</a></li>
+          <li><a href="brojanjesamoglasnika.html">Broj samoglasnika</a></li>
           <li><a href="pretvorbatemperature.html">Temperatura F u C</a></li>
           <li><a href="sortiranjeniza.html">Sortiranje niza</a></li>
           <li><a href="kalkulator.html">Kalkulator</a></li>
           <li><a href="generatorlozinke.html">Generator lozinke</a></li>
         </ul>
       </li>
-      <li><a href="#">Two</a></li>
-      <li><a href="#">Three</a></li>
+      <!-- <li><a href="#">Two</a></li>
+      <li><a href="#">Three</a></li> -->
     </ul>
   </div>
 </div>
@@ -56,7 +56,7 @@
         <!-- end of  nav -->
     </header>
     <main>
-    <h2>Mix zadataka</h2>
+    <h2>Pretvaranje  Celzijusa u Farenheit i obrnuto</h2>
     <p id="Note" class="text-center"></p>
 
     <!-- start selection -->
@@ -71,12 +71,13 @@
         <h3 class="ulaz">Ulaz</h3>
         <label for="">Vrijednost A</label>
         <input type="text" id="inA">
-
+<!-- 
         <label for="">Vrijednost B</label>
 
-        <input type="text" id="inB">
+        <input type="text" id="inB"> -->
 
-        <button id="Create" class="button-large">Napravi zadatak</button>
+        <button id="F" class="button-large">°C u °F</button>
+            <button id="C" class="button-large">°F u °C</button>
 
       </form>
 
@@ -98,7 +99,43 @@
   <script src="js/vendor/what-input.js"></script>
   <script src="js/vendor/foundation.js"></script>
 
-  <script src="js/app.js"></script>
+  <!-- <script src="js/app.js"></script> -->
+  <script>
+  $(document).foundation()
+
+  const result = document.querySelector('#result')
+  const inputA = document.querySelector('#inA')
+  const btnF = document.querySelector('#F')
+  const btnC = document.querySelector('#C')
+
+  // Gumb 1: Celzijus u Fahrenheit
+  btnF.addEventListener('click', (e) => {
+    e.preventDefault()
+    let temp = Number(inputA.value)
+
+    if (inputA.value.trim() === '' || isNaN(temp)) {
+      result.innerHTML = 'Unesite valjani broj!'
+      return
+    }
+
+    let fahrenheit = (temp * 9) / 5 + 32
+    result.innerHTML = `${temp}°C je ${fahrenheit.toFixed(2)}°F`
+  })
+
+  // Gumb 2: Fahrenheit u Celzijus (ODVOJENO od prvog gumba)
+  btnC.addEventListener('click', (e) => {
+    e.preventDefault()
+    let temp = Number(inputA.value)
+
+    if (inputA.value.trim() === '' || isNaN(temp)) {
+      result.innerHTML = 'Unesite valjani broj!'
+      return
+    }
+
+    let celsius = (temp - 32) / 1.8
+    result.innerHTML = `${temp}°F je ${celsius.toFixed(2)}°C`
+  })
+</script>
 </body>
 
 </html>

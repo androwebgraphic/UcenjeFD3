@@ -7,10 +7,11 @@ function* tijekUpoznavanja() {
     // yield šalje objekt prema van i pauzira funkciju
     const ime = yield { 
         naslov: 'Tko si ti?', 
-        opis: 'Prvo nam reci svoje ime kako bismo znali s kim pričamo.', 
+      opis: 'Prvo nam reci svoje ime kako bismo znali s kim pričamo.', 
+
         prikaziUnos: true 
     };
-
+       
     const godine = yield { 
         naslov: `Drago nam je, ${ime}!`, 
       opis: 'Koliko imaš godina?', 
@@ -34,9 +35,9 @@ function* tijekUpoznavanja() {
     };
 
     // 3. KORAK: Završna poruka
-    return { 
+    return {
         naslov: 'Sve je spremno!', 
-        opis: `Pozdrav za ${ime} (${godine}) iz grada ${grad} u ulici ${ulica}. Uspješno ste završili proces!`, 
+        opis: `Pozdrav  ${ime}u (${godine}) iz grada ${grad} u ulici ${ulica}. Uspješno ste završili proces!`, 
         prikaziUnos: false,
         gotovo: true 
     };

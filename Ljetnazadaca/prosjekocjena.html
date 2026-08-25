@@ -38,7 +38,7 @@
           <li><a href="prosjekocjena.html">Prosjek ocjena</a></li>
           <li><a href="fibonaci.html">Fibonaci niz</a></li>
           <li><a href="izokrenutistring.html">Izokrenuti string</a></li>
-          <li><a href="brojanje-samoglasnika.html">Broj samoglasnika</a></li>
+          <li><a href="brojansjesamoglasnika.html">Broj samoglasnika</a></li>
           <li><a href="pretvorbatemperature.html">Temperatura F u C</a></li>
           <li><a href="sortiranjeniza.html">Sortiranje niza</a></li>
           <li><a href="kalkulator.html">Kalkulator</a></li>
@@ -56,7 +56,7 @@
 
     </header>
     <main>
-    <h2>Mix zadataka</h2>
+    <h2>Prosjek ocjena</h2>
     <p id="Note" class="text-center"></p>
 
     <!-- start selection -->
@@ -98,47 +98,45 @@
 
 <script>
 $(document).foundation()
-let btn = document.querySelector('#Create')
-let A = document.querySelector('#inA').value
-let note = document.querySelector('#Note')
-let result = document.querySelector('#result')
+let btn = document.querySelector('#Create');
+let note = document.querySelector('#Note');
+let result = document.querySelector('#result');
 
+btn.addEventListener('click', (e) => {
+  e.preventDefault();
 
-btn.addEventListener('click', (e) =>{
-e.preventDefault()
+  // 1. Unos čitamo TEK KAD korisnik klikne gumb
+  let unosRaw = document.querySelector('#inA').value;
 
-let ocjene = []
- let unos = A.value
+  if (unosRaw.trim() !== '') {
+    // 2. Razdvajamo po zarezima i čistimo razmake/točke
+    let siroviElementi = unosRaw.split(',');
+    let ocjene = [];
 
- if(unos !== ''){
+    siroviElementi.forEach(ocjena => {
+      // Zamjena zareza točkom zbog parseFloat-a
+      let broj = parseFloat(ocjena.replace(',', '.').trim());
 
-  let ocjene = unos.split([,])
+      if (!isNaN(broj)) {
+        ocjene.push(broj); // Spremamo važeće brojeve u niz
+      }
+    });
 
-  ocjene.unos.forEach(ocjena => {
+    // 3. Zbrajanje
+    let zbroj = ocjene.reduce((suma, trenutni) => suma + trenutni, 0);
+let prosjek = zbroj/ocjene.length
+    // 4. Prikaz na stranici
+    result.innerHTML = `
+          <strong>Broj unesenih ocjena: </strong>${ocjene.length}<br>
+           <strong>Uneseni brojevi:</strong>${ocjene}<br>
+      <strong>Ukupan zbroj:</strong> ${zbroj}<br>
+       <strong> Prosjek ocjena je </strong>${prosjek.toFixed(2)}.
 
-    let broj = parseFloat(ocjena.replace(',', '.'))
-
-    if(!NaN(broj)){
-
-      unos.push(broj)
-    }
-    
-  });
-  let zbroj = ocjene.reduce((suma,trenutni) => suma + trenutni,0 )
-  result.innerHTML = `<strong> ukupan zbroj: ${zbroj}<strong><br>
-    <small>Broj unesenih ocjena : ${unos.lenth}</small><br><br>
-    <strong>Uneseni brojevi: </strong><br>
-    ${unos.jojin('br')} 
-
-    `
-    A.value
- }
-
-
-
-
-
-})
+     
+     
+    `;
+  }
+});
 
 </script>
 </body>
