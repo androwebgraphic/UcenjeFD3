@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edunova Videoteka</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Skip to content -->
+  <a href="#gallery" class="sr-only" id="skipLink">Skip to video gallery</a>
+
+  <!-- Header -->
+  <header class="hero" role="banner">
+    <div class="hero__glow"></div>
+    <h1 class="hero__title">Go Back to the Future</h1>
+    <p class="hero__subtitle">Edunova Videoteka &mdash; Meet the Toaster Hijackers</p>
+  </header>
+
+  <!-- Gallery -->
+  <main class="gallery" id="gallery" role="region" aria-label="Video gallery">
+    <!-- Cards are injected by JS -->
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Video player" aria-hidden="true">
+    <div class="modal__overlay" id="modalOverlay"></div>
+    <div class="modal__container">
+      <button class="modal__close" id="modalClose" aria-label="Close modal">&times;</button>
+      <button class="modal__arrow modal__arrow--left" id="modalPrev" aria-label="Previous video">&#10094;</button>
+      <div class="modal__player">
+        <video class="modal__video" id="modalVideo" controls aria-label="Selected video"></video>
+        <div class="modal__caption" aria-live="polite">
+          <h2 class="modal__name" id="modalName"></h2>
+          <span class="modal__role" id="modalRole"></span>
+        </div>
+      </div>
+      <button class="modal__arrow modal__arrow--right" id="modalNext" aria-label="Next video">&#10095;</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

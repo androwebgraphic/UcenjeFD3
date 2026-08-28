@@ -15,7 +15,7 @@ const playback = document.getElementById('audioPlayback');
 
 startBtn.onclick = async () => {
   const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-  downloadBtn.disabled = true;
+  downloadBtn.disabled = false;
   // --- KONFIGURACIJA VIZUALIZACIJE ---
   audioContext = new (window.AudioContext || window.AudioContext)();
   const source = audioContext.createMediaStreamSource(stream);
@@ -85,7 +85,8 @@ downloadBtn.onclick = () => {
     // Generiranje predloženog imena
     const defaultFileName = `snimka_${getTimestamp()}.wav`;
     
-    // Prompt za korisnika
+  // Prompt za korisnika
+
     let userFileName = prompt("Unesite ime datoteke:", defaultFileName);
 
     // Ako korisnik klikne "Cancel", prekidamo proces
