@@ -127,76 +127,17 @@ btn.addEventListener('click', (e) => {
 
   let together = (nameMale + nameFemale).toUpperCase().replace(/\s+/g, '');
 
-  // Helper: collapse row from both ends (sum outer pairs)
-  function collapseRow(row) {
-    let out = [];
-    let left = 0;
-    let right = row.length - 1;
-    while (left <= right) {
-      if (left === right) {
-        out.push(row[left]);
-      } else {
-        out.push(row[left] + row[right]);
-      }
-      left++;
-      right--;
-    }
-    return out;
-  }
+  matchMedia
 
-  // 1st row: how many times each letter appears in the combined name
-  let firstRow = [];
-  for (let i = 0; i < together.length; i++) {
-    let counter = 0;
-    for (let j = 0; j < together.length; j++) {
-      if (together[i] === together[j]) {
-        counter++;
-      }
-    }
-    firstRow.push(counter);
-  }
 
-  // Collect every step's value to display
-  let steps = [];
-  steps.push({ label: '1. red', value: firstRow.join('') });
 
-  // Collapse repeatedly until we end with a 2-digit number
-  let row = firstRow;
-  while (row.length > 2) {
-    row = collapseRow(row);
-    // If the sum produced numbers with more than one digit, split them
-    if (row.join('').length > 2) {
-      row = row.join('').split('').map(Number);
-    }
-    steps.push({ label: (steps.length + 1) + '. red', value: row.join('') });
-  }
 
-  let percentage = row.join('');
-
-  // Build a display of each step plus the final percentage
-  let stepsHtml = steps.map(function (s, i) {
-    let isLast = (i === steps.length - 1);
-    let style = isLast
-      ? 'margin:4px 0; font-weight:bold; color:green;'
-      : 'margin:4px 0; color:#555;';
-    return '<p style="' + style + '">' + s.label + ': <strong>' + s.value + '</strong></p>';
-  }).join('');
-
-  result.innerHTML = `
-    <div class="love-result" style="background:#f4f4f4; padding:18px; border-radius:10px; margin-top:12px; text-align:center; z-index:-999;"
-
-      <p style="margin:0 0 8px; font-size:1rem; color:#333;">
-        Names: <strong>${nameMale}</strong> &amp; <strong>${nameFemale}</strong>
-      </p>
-      ${stepsHtml}
-      <hr style="margin:10px 0; border:none; border-top:1px solid #ddd;">
-      <p style="margin:0; font-size:2.4rem; font-weight:bold; color:yellowgreen;">${percentage}%</p>
-    </div>`;
-}); // End of btn listener
+    
+});  // End of btn listener
 
   </script>
 
-  <!-- <script src="js/app.js"></script> -->
+ <!-- <script src="js/app.js"></script> -->
 
 </body>
 </html>
