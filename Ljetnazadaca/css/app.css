@@ -12,12 +12,13 @@
 
 body {
   height: 100%;
-       margin: 0;
-      padding: 0;
-      /* display:flex;
+  margin: 0;
+  padding: 0;
+  /* display:flex;
       justify-content: center;
       height: 100vh; */
-      background-color:  hsl(0, 0%, 95%);;
+  background-color: hsl(0, 0%, 95%);
+  ;
 }
 
 html {
@@ -44,23 +45,25 @@ header {
 p {
   padding: .6rem;
   color: var(--primary-bg);
-  font-size:1rem;
+  font-size: 1rem;
   line-height: 1.5rem;
 }
-ul{
+
+ul {
   list-style-type: none;
 }
-aside{
+
+aside {
   display: flex;
   flex-direction: column;
-  flex:stretch;
-  width:25%;
-  background-color:  var(--grey-violet-bg);
+  flex: stretch;
+  width: 25%;
+  background-color: var(--grey-violet-bg);
   border-radius: .6rem;
   padding: .6rem;
 }
 
-aside nav a{
+aside nav a {
 
   margin: .3rem 0 .3rem 0;
   padding: .4rem;
@@ -69,6 +72,7 @@ aside nav a{
 
 
 }
+
 #Note {
 
   background-color: var(--grey-violet-bg);
@@ -131,17 +135,19 @@ main {
   height: 100%;
   margin: 2rem;
   padding: .6rem;
-  border-radius:.6rem;
+  border-radius: .6rem;
   background-color: var(--secondary-bg);
 }
+
 span {
 
   color: var(--secondary-bg);
 
 }
-select{
 
-      margin: .8rem 0 .8rem 0;
+select {
+
+  margin: .8rem 0 .8rem 0;
   border-radius: .6rem;
 }
 
@@ -175,9 +181,9 @@ h3.izlaz {
   /* margin-left: auto; */
   color: var(--grey-violet-bg);
   font-weight: bolder;
-writing-mode: vertical-lr;
-  text-orientation: sideways-right; 
-    /* transform: rotate(-180deg); */
+  writing-mode: vertical-lr;
+  text-orientation: sideways-right;
+  /* transform: rotate(-180deg); */
 }
 
 
@@ -213,7 +219,9 @@ tr {
 
 
 
-#Create, #C, #F {
+#Create,
+#C,
+#F {
   padding: 5px 15px;
   cursor: pointer;
 
@@ -223,11 +231,12 @@ tr {
   color: var(--secondary-bg);
 }
 
-#Create:hover{
+#Create:hover {
 
   transform: scale(1.5);
 
 }
+
 .tableContainer {
   display: flex;
   flex-direction: column;
@@ -265,89 +274,120 @@ tr {
   transform: scale(1.2);
   transition: ease-in-out 2ms;
 }
-#result{
+
+#result {
 
   font-size: 1rem;
   color: var(--primary-bg);
 }
-.accordion ul:hover{
+
+.love-result {
+
+  background-image: url('../img/heart.webp');
+  background-repeat: no-repeat;
+  position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.accordion ul:hover {
 
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
-.accordion-content p{
 
-  color:var(--primary-bg) ;
+.accordion-content p {
+
+  color: var(--primary-bg);
 }
-.accordion-title{
+
+.accordion-title {
   font-size: 1rem;
   color: var(--grey-violet-bg);
 }
 
-    #Calculator {
-      margin: 0 auto;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: hsl(0, 0%, 15%);
-      border-radius: 15px;
-      max-width: 500px;
-      overflow: hidden;
-      box-shadow: 2px 3px 10px  hsl(0, 0%, 15%);
-    }
-    #display{
+#Calculator {
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: hsl(0, 0%, 15%);
+  border-radius: 15px;
+  max-width: 500px;
+  overflow: hidden;
+  box-shadow: 2px 3px 10px hsl(0, 0%, 15%);
+}
 
-      width: 100%;
-      height: 5rem;
-      padding: 20px ;
-      border-radius: 15px;
-      font-size:4.5rem;
-      text-align: left;
-      border:none;
-      background-color: hsl(0, 0%, 20%);
-      color: white;
-    }
+#display {
 
-    #Buttons {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      padding: 25px;
+  width: 100%;
+  height: 5rem;
+  padding: 20px;
+  border-radius: 15px;
+  font-size: 4.5rem;
+  text-align: left;
+  border: none;
+  background-color: hsl(0, 0%, 20%);
+  color: white;
+}
+
+#Buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 25px;
 
 
-    }
+}
 
-    #Buttons button{
+#Buttons button {
 
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: none;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
 
-      background-color: hsl(0, 0%, 30%);
-      color: white;
-      font-size: 2rem;
-      font-weight: bold;
-      cursor: pointer;
-    }
+  background-color: hsl(0, 0%, 30%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    #Buttons button:hover{
+#Buttons button:hover {
 
-      background-color:  hsl(0, 0%, 40%); 
-    }
-   #Buttons button:active{
+  background-color: hsl(0, 0%, 40%);
+}
 
-      background-color:  hsl(0, 0%, 50%);
-    }
-   #Buttons .operator-btn{
+#Buttons button:active {
 
-      background-color: hsl(35, 100%, 55%);
-    }
-    #Buttons .operator-btn:hover{
-background-color: hsl(35, 100%, 65%);
+  background-color: hsl(0, 0%, 50%);
+}
 
-    }
-    #Buttons.operator-btn:active{
+#Buttons .operator-btn {
 
-      background-color: hsl(35, 100%, 75%);;
-    }
+  background-color: hsl(35, 100%, 55%);
+}
+
+#Buttons .operator-btn:hover {
+  background-color: hsl(35, 100%, 65%);
+
+}
+
+#Buttons.operator-btn:active {
+
+  background-color: hsl(35, 100%, 75%);
+  ;
+}
+input[type="checkbox"]{
+font-size: 2rem;
+  padding: .3rem;
+  margin-right: 1rem;
+}
+
+/* .checkbox{
+
+  display: grid;
+  grid: 1fr 2fr;
+} */
+
 /*=======Footer=========
 =========================
 */
@@ -358,4 +398,3 @@ footer {
 footer p.copy {
   color: var(--secondary-bg);
 }
-

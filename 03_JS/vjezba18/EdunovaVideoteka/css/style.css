@@ -140,13 +140,11 @@ body {
 
 .card:active {
   transform: scale(0.98);
-  box-shadow: none;
-  border-color: rgba(255, 255, 255, 0.04);
 }
 
-.card:active .card__video-wrap::after {
-  border-color: transparent;
-  box-shadow: none;
+.card:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .card__video-wrap {

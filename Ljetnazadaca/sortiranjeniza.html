@@ -16,7 +16,7 @@
     <header>
       <h1 class="text-center"
         style="color: yellowgreen; font-weight:bolder; text-decoration: overline; text-decoration: underline;">☀️Ljetni
-        zadatci 2🥵</h1>
+        zadatci 🥵</h1>
  <!-- nav starts -->
 
           <div class="title-bar" data-responsive-toggle="example-animated-menu" data-hide-for="medium">
@@ -38,15 +38,16 @@
           <li><a href="prosjekocjena.html">Prosjek ocjena</a></li>
           <li><a href="fibonaci.html">Fibonaci niz</a></li>
           <li><a href="izokrenutistring.html">Izokrenuti string</a></li>
-          <li><a href="brojanjesamoglasnika.html">Broj samoglasnika</a></li>
+          <li><a href="brojanje-samoglasnika.html">Broj samoglasnika</a></li>
           <li><a href="pretvorbatemperature.html">Temperatura F u C</a></li>
           <li><a href="sortiranjeniza.html">Sortiranje niza</a></li>
           <li><a href="kalkulator.html">Kalkulator</a></li>
           <li><a href="generatorlozinke.html">Generator lozinke</a></li>
+          <li><a href="ljubavnikalkulator.html">Ljubavni Kalkulator</a></li>
         </ul>
       </li>
-      <li><a href="#">Two</a></li>
-      <li><a href="#">Three</a></li>
+      <!-- <li><a href="#">Two</a></li>
+      <li><a href="#">Three</a></li> -->
     </ul>
   </div>
 </div>
@@ -70,13 +71,13 @@
       <form action="" id="One" class="cell small-12 medium-6">
         <h3 class="ulaz">Ulaz</h3>
         <label for="">Vrijednost A</label>
-        <input type="text" id="inA">
+        <input type="text" id="inA" placeholder="Unesi brojeve odvojene zarezom npr. 5,3,8,17,200">
 
         <!-- <label for="">Vrijednost B</label>
 
         <input type="text" id="inB"> -->
 
-        <button id="Create" class="button-large">Napravi zadatak</button>
+        <button id="Create" class="button-large">Sortiraj niz</button>
 
       </form>
 
@@ -102,16 +103,19 @@
    <script>
 $(document).foundation()
 
-let A = document.querySelector('#inA').value
+// let A = document.querySelector('#inA').value
 let result = document.querySelector('#result')
 let btn = document.querySelector('#Create')
 
 
 btn.addEventListener('click', (e) => {
   e.preventDefault()
+  let A = document.querySelector('#inA').value
+  let niz = A.split(',').map(Number)
 
+  let sortNiz = niz.sort((a, b) => a - b)
 
-resul.innerHTML = ''
+  result.innerHTML = `<strong>Sortirani niz (uzlazno):</strong> ${sortNiz.join(', ')}`
 })
 
    </script>

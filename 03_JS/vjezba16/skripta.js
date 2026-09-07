@@ -3,7 +3,7 @@
 function* primjerGenerator() {
   
   console.log('Pocetak generatora')
-  
+
   yield true// prva pauza
 
   yield 2.7 // druga pauza
@@ -14,7 +14,7 @@ function* primjerGenerator() {
 
 const generator = primjerGenerator()//konsola je prazna
 
-console.log(generator.next().value)// nex je  poziv do prvog Yield-a
+console.log(generator.next().value)// .next je  poziv do prvog Yield-a
 
 console.log(generator.next())
 
@@ -76,6 +76,11 @@ let pitanje = chat.next().value// pitnaje kasko se  zoves
 console.log(pitanje)
 
 pitanje = chat.next('Marko').value
+console.log(pitanje)
+
+console.log(chat.next('Marija').value)
+console.log(pitanje)
+pitanje = chat.next('Andro').value
 console.log(pitanje)
 
 
