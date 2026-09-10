@@ -1,0 +1,226 @@
+/* ==========================================================================
+   1. CSS VARIJABLE & OSNOVNI RESET
+   ========================================================================== */
+:root {
+  /* Paleta boja */
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --primary-light: #eeef2;
+  --danger: #ef4444;
+  --danger-bg: #fef2f2;
+  --danger-border: #fecaca;
+  
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  
+  /* Dizajnerski detalji */
+  --radius-lg: 24px;
+  --radius-md: 14px;
+  --radius-sm: 8px;
+  --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+/* Container omotač */
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   2. MOBILNI STILOVI (Default - Mobile First)
+   ========================================================================== */
+
+.counter-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 2rem 1.5rem;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+/* Zaglavlje */
+.counter-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.counter-card__subtitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+}
+
+.counter-card__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Prikaz broja */
+.counter-card__display {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  width: 100%;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter-card__number {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text-main);
+  font-variant-numeric: tabular-nums; /* Sprječava skakanje širine pri promjeni broja */
+}
+
+/* Gumbi i Akcije */
+.counter-card__actions {
+  display: flex;
+  flex-direction: column; /* Na najmanjim ekranima gumbi idu jedan ispod drugog */
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 52px; /* Optimalna visina za dodir prstom (Touch target UX) */
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  user-select: none;
+}
+
+.btn__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.btn--primary {
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 2px solid #e2e8f0;
+}
+
+/* Upozorenje (Alert) */
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+.alert--danger {
+  background-color: var(--danger-bg);
+  border: 1px solid var(--danger-border);
+  color: var(--danger);
+}
+
+.alert__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   3. RESPONSIVE MEDIA QUERIES & HOVER EFEKTI
+   ========================================================================== */
+
+/* Za ekrane šire od 400px (Tableti i širi mobiteli) */
+@media (min-width: 400px) {
+  .counter-card__actions {
+    flex-direction: row; /* Gumbi prelaze u jedan pored drugoga */
+  }
+}
+
+/* Efekti pri prijelazu mišem (omogućeni samo na uređajima s mišem) */
+@media (hover: hover) {
+  .btn--primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.45);
+  }
+
+  .btn--outline:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+  }
+
+  .btn:active {
+    transform: translateY(0);
+  }
+}
+
+/* Dynamic Vue Shake Animacija za alert */
+.shake-enter-active {
+  animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.shake-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.shake-leave-to {
+  opacity: 0;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}

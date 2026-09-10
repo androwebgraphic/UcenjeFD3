@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue JS Brojač</title>
+    
+    <!-- Uvoz Inter fonta s Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Vanjski CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="wrapper">
+        <div id="app" class="counter-card">
+            
+            <header class="counter-card__header">
+                <span class="counter-card__subtitle">Aplikacija</span>
+                <p class="counter-card__title">Trenutni broj</p>
+            </header>
+
+            <div class="counter-card__display">
+                <h1 class="counter-card__number">{{ brojac }}</h1>
+            </div>
+
+            <div class="counter-card__actions">
+                <button @click="uvecaj" class="btn btn--primary" aria-label="Uvećaj broj">
+                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    Uvećaj
+                </button>
+                <button @click="umanji" class="btn btn--outline" aria-label="Umanji broj">
+                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    Umanji
+                </button>
+            </div>
+
+            <!-- Vue.js Upozorenje -->
+            <transition name="shake">
+                <div v-if="upozori" class="alert alert--danger" role="alert">
+                    <svg class="alert__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span>Broj ne može biti manji od 0!</span>
+                </div>
+            </transition>
+
+        </div>
+    </main>
+
+    <script src="vue.3.5.42.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
