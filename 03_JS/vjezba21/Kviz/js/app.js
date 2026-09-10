@@ -1,75 +1,71 @@
 const { createApp } = Vue;
 
 createApp({
-    data() {
-        return {
-            pitanjaZaKrug: [],
-            indeks: 0,
-            rezultat: 0,
-            pokaziRezultate: false,
-            up: 3
-        }
+  data() {
+    return {
+      up: 10, // Broj pitanja po krugu (definira varijablu {{up}} u HTML-u)
+      indeks: 0,
+      tocniOdgovori: 0,
+      pokaziRezultate: false,
+      svapitanja: typeof skupPitanjaES6 !== 'undefined' ? skupPitanjaES6 : [],
+      pitanjaKruga: []
+    };
+  },
+  computed: {
+    // Vraća trenutno aktivno pitanje
+    trenutnoPitanje() {
+      return this.pitanjaKruga[this.indeks] || { pitanje: '', odgovori: [], tocno: '' };
     },
-    computed: {
-        // Automatski dohvaća trenutno pitanje na temelju indeksa
-        trenutnoPitanje() {
-            return this.pitanjaZaKrug[this.indeks] || {};
-        },
-        // Izračunava širinu progres trake
-        progres() {
-            return (this.indeks / this.up) * 100;
-        },
-        izracunajPostotak(){
-            if(this.rezultat===0){
-                return '0 %';
-            }else{
-                const postotak = (this.rezultat / this.up)*100;
-                return parseInt(postotak) + ' %';
-            }
-        },
-        // Logika ocjenjivanja prebačena u computed radi čistoće
-        izracunajOcjenu() {
-            if(this.rezultat===0){
-                return 'Nedovoljan (1). Ponovi osnove!';
-            }else{
-                const postotak = (this.rezultat / this.up)*100;
-                if(postotak>=80){
-                    return 'Odličan (5)! Pravi si ES6 majstor!';
-                }
-                if(postotak>=60){
-                    return 'Vrlo dobar (4)! Skoro savršeno.';
-                }
-                if(postotak>=40){
-                    return 'Dobar (3). Solidno poznavanje.';
-                }
-                return 'Dovoljan (2). Trebaš još malo učiti.';
-            }
-        }
+    // Izračunava širinu progres trake u postocima
+    progres() {
+      if (this.up === 0) return 0;
+      return ((this.indeks) / this.up) * 100;
     },
-    methods: {
-        pokreniKrug() {
-            // Skraćena verzija miješanja i odabira 5 unikatnih pitanja
-            this.pitanjaZaKrug = [...skupPitanja]
-                .sort(() => 0.5 - Math.random())
-                .slice(0, this.up);
-            
-            this.indeks = 0;
-            this.rezultat = 0;
-            this.pokaziRezultate = false;
-        },
-        obradiOdgovor(odabrano) {
-            if (odabrano === this.trenutnoPitanje.tocno) {
-                this.rezultat++;
-            }
-
-            if (this.indeks < this.up-1) {
-                this.indeks++;
-            } else {
-                this.pokaziRezultate = true;
-            }
-        }
+    // Izračunava postotak točnosti za prikaz na kraju kruga
+    izracunajPostotak() {
+      if (this.up === 0) return '0%';
+      const postotak = Math.round((this.tocniOdgovori / this.up) * 100);
+      return `${postotak}% (${this.tocniOdgovori}/${this.up})`;
     },
-    mounted() {
-        this.pokreniKrug();
+    // Vraća tekstualnu ocjenu na temelju postotka
+    izracunajOcjenu() {
+      const postotak = (this.tocniOdgovori / this.up) * 100;
+      if (postotak === 100) return 'Savršeno! Izvrsno poznavanje ES6!';
+      if (postotak >= 80) return 'Odličan rezultat!';
+      if (postotak >= 50) return 'Dobro je, ali ima prostora za napredak.';
+      return 'Potrebno je još vježbe. Pokušaj ponovno!';
     }
+  },
+  methods: {
+    // Generira novi krug s nasumičnih 'up' (10) pitanja iz skupPitanjaES6
+    pokreniKrug() {
+      this.indeks = 0;
+      this.tocniOdgovori = 0;
+      this.pokaziRezultate = false;
+
+      // Nasumično miješanje (Fisher-Yates shuffle) i uzimanje prvih 'up' pitanja
+      const kopija = [...this.svapitanja];
+      for (let i = kopija.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [kopija[i], kopija[j]] = [kopija[j], kopija[i]];
+      }
+
+      this.pitanjaKruga = kopija.slice(0, this.up);
+    },
+    // Provjerava je li odabrani odgovor točan i prelazi na sljedeće pitanje
+    obradiOdgovor(odabraniOdgovor) {
+      if (odabraniOdgovor === this.trenutnoPitanje.tocno) {
+        this.tocniOdgovori++;
+      }
+
+      if (this.indeks + 1 < this.up) {
+        this.indeks++;
+      } else {
+        this.pokaziRezultate = true;
+      }
+    }
+  },
+  mounted() {
+    this.pokreniKrug();
+  }
 }).mount('#app');
