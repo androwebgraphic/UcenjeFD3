@@ -5,7 +5,7 @@
                 indeks: 0,
                 rezultat: 0,
                 kvizZavrsen: false,
-                brojPitanja: 3,
+                brojPitanja: 4,
                 progress: 0,
 
                 // Computed property helper
@@ -13,16 +13,19 @@
                     return this.trenutnaPitanja[this.indeks] || {};
                 },
 
-                pokreniNoviKrug() {
-                    // Moderniji način odabira 5 unikatnih pitanja
-                    this.trenutnaPitanja = [...this.skupPitanja]
-                        .sort(() => 0.5 - Math.random())
-                        .slice(0, this.brojPitanja);
-                    this.indeks = 0;
-                    this.rezultat = 0;
-                    this.kvizZavrsen = false;
-                },
-
+               // Fisher-Yates (Knuth) Shuffle - najpouzdaniji način miješanja
+pokreniNoviKrug() {
+    let kopija = [...this.skupPitanja];
+    for (let i = kopija.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [kopija[i], kopija[j]] = [kopija[j], kopija[i]];
+    }
+    
+    this.trenutnaPitanja = kopija.slice(0, this.brojPitanja);
+    this.indeks = 0;
+    this.rezultat = 0;
+    this.kvizZavrsen = false;
+},
                 obradiOdgovor(odgovor) {
                     if (odgovor === this.trenutnoPitanje.tocno) this.rezultat++;
                     
