@@ -16,10 +16,11 @@ function App() {
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
         <div>
-          <h1>Dobro došli na Aukcije 😀</h1>
+          <h1>Dobo došli na AUKCIJE 🙂</h1>
           <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+         Pažljivo pročitajte Uvjete korištenja kako ne bi došlo do neželjenih komplikacija!!!
           </p>
+          <p>Uživajte u prodaji ili kupovini. <strong>Sretno svima</strong></p>
         </div>
         <button
           type="button"
