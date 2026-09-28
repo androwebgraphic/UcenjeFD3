@@ -3,6 +3,8 @@ import SmjerService from "../../services/smjerovi/SmjerService"
 import { Table } from "react-bootstrap"
 import { GrValidate } from "react-icons/gr"
 import { FcApproval, FcDisapprove } from "react-icons/fc"
+import { RouteNames } from "../../constants"
+import { Link } from "react-router-dom"
 
 
 export default function SmjerPregled(){
@@ -10,7 +12,7 @@ export default function SmjerPregled(){
     const [smjerovi, setSmjerovi] = useState([])
 
     useEffect(()=>{
-        console.log('Došao na pregled smjerova')
+      
         ucitajSmjerove()
     },[])
 
@@ -23,7 +25,13 @@ export default function SmjerPregled(){
 
 
     return (
-        <>
+      <>
+        
+     <Link to={RouteNames.SMJEROVI_NOVI}>
+        
+          Dodavanje  novog smjera
+        
+        </Link>
      
         <Table hover striped bordered >
           <thead>
