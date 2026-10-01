@@ -1,4 +1,3 @@
-import React from 'react';
 import './Raspored.css';
 
 // Izvučeni tekst termina u varijablu

@@ -5,6 +5,10 @@ async function get(){
     return {data: [...smjerovi]} // [...] stvara novi niz s istim podacima
 }
 
+async function getBySifra(sifra){
+    return {data: smjerovi.find(s => s.sifra === parseInt(sifra))}    
+}
+
 
 // 2/4 Create od CRUD
 async function dodaj(smjer){
@@ -20,5 +24,6 @@ async function dodaj(smjer){
 
 export default{
     get,
-    dodaj
+    dodaj,
+    getBySifra
 }

@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import SmjerPregled from './pages/smjerovi/SmjerPregled'
 import SmjerNovi from './pages/smjerovi/SmjerNovi'
 import Raspored from './pages/raspored/Raspored'
+import SmjerPromjena from './pages/smjerovi/SmjerPromjena'
 
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path={RouteNames.RASPORED} element={<Raspored />} />
         <Route path={RouteNames.SMJEROVI} element={<SmjerPregled />} />
         <Route path={RouteNames.SMJEROVI_NOVI} element={<SmjerNovi />} />
+        <Route path={RouteNames.SMJEROVI_PROMJENA} element={<SmjerPromjena />} />
       </Routes>
     </Container>
     <hr />

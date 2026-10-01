@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react"
 import SmjerService from "../../services/smjerovi/SmjerService"
-import { Table } from "react-bootstrap"
+import { Button, Table } from "react-bootstrap"
 import { GrValidate } from "react-icons/gr"
 import { FcApproval, FcDisapprove } from "react-icons/fc"
 import { NumericFormat } from "react-number-format"
 import FormatDatuma from "../../components/FormatDatuma"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { RouteNames } from "../../constants"
 
 
 export default function SmjerPregled() {
 
     const [smjerovi, setSmjerovi] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         //console.log('Došao na pregled smjerova')
@@ -40,6 +41,7 @@ export default function SmjerPregled() {
                         <th>Cijena</th>
                         <th>Datum pokretanja</th>
                         <th>Aktivan</th>
+                        <th>Akcija</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -77,6 +79,11 @@ export default function SmjerPregled() {
                                     <FcDisapprove size={25} />
                                 )}
 
+                            </td>
+                            <td>
+                                <Button onClick={()=>{navigate(`/smjerovi/${smjer.sifra}`)}}>
+                                    Promjeni
+                                </Button>
                             </td>
                         </tr>
                     ))}
