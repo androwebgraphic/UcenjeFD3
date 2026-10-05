@@ -19,11 +19,27 @@ async function dodaj(smjer){
     }
     smjerovi.push(smjer)
 }
+//3/4 CRUD update
+
+async function promijeni(sifra, smjer) {
+  
+  const index = nadiIndex(sifra)
+  smjerovi[index] = {...smjerovi[index], ...smjer}
+  
+
+}
 
 
+
+//nemoraju sve funkcije biti izvana
+function nadiIndex(sifra) {
+  return smjerovi.findIndex(s => s.sifra===parseInt(sifra))
+
+}
 
 export default{
     get,
     dodaj,
-    getBySifra
+  getBySifra,
+    promijeni
 }
