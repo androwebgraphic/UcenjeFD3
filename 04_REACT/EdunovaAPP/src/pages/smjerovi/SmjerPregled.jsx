@@ -26,16 +26,14 @@ export default function SmjerPregled() {
         })
     }
 
-  async function obrisi(sifra) {
-    
-    if (!confirm('sigurno obrisati')) {
-      return
+    async function obrisi(sifra){
+        if(!confirm('Sigurno obrisati')){
+            return
+        }
+        await SmjerService.obrisi(sifra)
+        ucitajSmjerove()
     }
 
-    await SmjerService.obrisi(sifra)
-    ucitajSmjerove()
-
-  }
 
     return (
         <>
@@ -93,9 +91,11 @@ export default function SmjerPregled() {
                             <td>
                                 <Button onClick={()=>{navigate(`/smjerovi/${smjer.sifra}`)}}>
                                     Promjeni
-                          </Button>
-                                  &nbsp;    &nbsp;
-                          <Button variant='danger' onClick={() => obrisi(smjer.sifra)}>Obriši</Button>
+                                </Button>
+                                &nbsp;&nbsp;
+                                <Button variant="danger" onClick={()=>obrisi(smjer.sifra)}>
+                                    Obriši
+                                </Button>
                             </td>
                         </tr>
                     ))}
