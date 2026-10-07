@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import SmjerService from "../../services/smjerovi/SmjerService"
 import { Button, Table } from "react-bootstrap"
 import { GrValidate } from "react-icons/gr"
-import { FcApproval, FcDisapprove } from "react-icons/fc"
+
 import { NumericFormat } from "react-number-format"
 import FormatDatuma from "../../components/FormatDatuma"
 import { Link, useNavigate } from "react-router-dom"
@@ -72,7 +72,7 @@ export default function SmjerPregled() {
                             <td style={{ textAlign: 'center' }}>
                                 <FormatDatuma datum={smjer.datumPokretanja} />
                             </td>
-                            <td>
+                            <td style={{ textAlign: 'center' }}>
                                 {/* {smjer.aktivan ? 'DA' : 'NE'} */}
                                 {/* Primjer jedne ikone s različitom bojom u osnosu na boolean svojstvo */}
                                 <GrValidate
@@ -81,11 +81,11 @@ export default function SmjerPregled() {
                                 />
 
                                 {/* Primjer različitih ikona u osnosu na boolean svojstvo */}
-                                {smjer.aktivan ? (
+                                {/*smjer.aktivan ? (
                                     <FcApproval size={25} />
                                 ) : (
                                     <FcDisapprove size={25} />
-                                )}
+                                )*/}
 
                             </td>
                             <td>
