@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import SmjerService from "../../services/smjerovi/SmjerService"
 import { Button, Table } from "react-bootstrap"
 import { GrValidate } from "react-icons/gr"
-
+import { FcApproval, FcDisapprove } from "react-icons/fc"
 import { NumericFormat } from "react-number-format"
 import FormatDatuma from "../../components/FormatDatuma"
 import { Link, useNavigate } from "react-router-dom"
