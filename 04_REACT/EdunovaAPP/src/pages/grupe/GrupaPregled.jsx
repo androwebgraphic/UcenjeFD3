@@ -13,10 +13,18 @@ export default function GrupaPregled() {
 
     const [grupe, setGrupe] = useState([])
     const [smjerovi, setSmjerovi] = useState([])
+    const [sviPolaznici, setSviPolaznici] = useState([])
+    const [tooltip, setTooltip] = useState({
+        vidljivo: false,
+        x: 0,
+        y: 0,
+        podaci: []
+    })
     const navigate = useNavigate()
 
     useEffect(() => {
         ucitajSmjerove()
+        ucitajPolaznike()
         ucitajGrupe()
     }, [])
 
@@ -27,12 +35,42 @@ export default function GrupaPregled() {
         })
     }
 
+    async function ucitajPolaznike() {
+        await PolaznikService.get().then((odgovor) => {
+            setSviPolaznici(odgovor.data)
+        })
+    }
+
     async function ucitajSmjerove() {
         await SmjerService.get().then((odgovor) => {
             // console.log(JSON.stringify(odgovor.data))
             setSmjerovi(odgovor.data)
         })
     }
+
+    // --- LOGIKA ZA TOOLTIP ---
+    const handleMouseEnter = (sifrePolaznikaUGrupi) => {
+        if (!sifrePolaznikaUGrupi || sifrePolaznikaUGrupi.length === 0) return;
+
+        // Filtriraj objekte polaznika na temelju šifri iz grupe
+        const filtrirani = sviPolaznici.filter(p => sifrePolaznikaUGrupi.includes(p.sifra));
+
+        setTooltip(prev => ({ ...prev, vidljivo: true, podaci: filtrirani }));
+    };
+
+    const handleMouseMove = (e) => {
+        // Pomicanje tooltipa 15px desno i dolje od miša da ne smeta kursoru
+        //console.log(e.pageY)
+        if (e.pageY > 250) {
+            setTooltip(prev => ({ ...prev, x: e.pageX + 15, y: e.pageY - 200 }));
+        } else {
+            setTooltip(prev => ({ ...prev, x: e.pageX + 15, y: e.pageY + 15 }));
+        }
+    };
+
+    const handleMouseLeave = () => {
+        setTooltip(prev => ({ ...prev, vidljivo: false, podaci: [] }));
+    };
 
     async function obrisi(sifra) {
         if (!confirm('Sigurno obrisati')) {
@@ -97,7 +135,14 @@ export default function GrupaPregled() {
                                     style={{ cursor: 'hand' }}
                                     onClick={() => generirajPDFZaGrupu(grupa)} title="Generiraj PDF" />
 
-                                {grupa.naziv} <span title="Broj polaznika">({grupa.polaznici.length})</span></td>
+                                {grupa.naziv}
+                                <span
+                                    title="Broj polaznika"
+                                    className="text-center"
+                                    style={{ cursor: 'help', fontWeight: 'bold' }}
+                                    onMouseEnter={() => handleMouseEnter(grupa.polaznici)}
+                                    onMouseMove={handleMouseMove}
+                                    onMouseLeave={handleMouseLeave}>({grupa.polaznici.length})</span></td>
                             <td>{dohvatiNazivSmjera(grupa.smjer)}</td>
                             <td>
                                 <Button onClick={() => { navigate(`/grupe/${grupa.sifra}`) }}>
@@ -112,7 +157,29 @@ export default function GrupaPregled() {
                     ))}
                 </tbody>
             </Table>
-
+            {/* Prikaz popisa polaznika (Tooltip) */}
+            {tooltip.vidljivo && (
+                <div style={{
+                    position: 'absolute',
+                    top: tooltip.y,
+                    left: tooltip.x,
+                    backgroundColor: 'white',
+                    border: '1px solid #ccc',
+                    padding: '10px',
+                    borderRadius: '5px',
+                    boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+                    zIndex: 1000,
+                    minWidth: '200px',
+                    pointerEvents: 'none' // Da tooltip ne "treperi" kad miš uđe u njega
+                }}>
+                    <h6>Polaznici u grupi:</h6>
+                    <ol style={{ margin: 0, paddingLeft: '20px' }}>
+                        {tooltip.podaci.map(p => (
+                            <li key={p.sifra}>{p.ime} {p.prezime}</li>
+                        ))}
+                    </ol>
+                </div>
+            )}
         </>
     )
 }
