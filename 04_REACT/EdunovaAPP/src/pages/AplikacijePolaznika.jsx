@@ -47,7 +47,7 @@ export default function AplikacijePolaznika() {
             "git": "https://github.com/hogar88888",
             "url": "https://edunova7.origo.hr",
             "aplikacija": "DieHausers site",
-            "opis": "NAKNADNO"
+            "opis": "Aplikacija za praćenje (prema riječima glazbenih kritičara) dugo skrivane, dobro čuvane tajne slavonske noise rock scene. DIE HAUSERS, Osijek, Hrvatska, EU, stari kontinent, sjeverna polutka…samo je nebo granica."
         },
         {
             "ime": "Sean",
@@ -71,7 +71,7 @@ export default function AplikacijePolaznika() {
             "git": "https://github.com/jurajprsa-ai",
             "url": "https://edunova10.origo.hr",
             "aplikacija": "Namještaj po mjeri",
-            "opis": "NAKNADNO"
+            "opis": "App je osmišljen za odabir kuhinja po nazivu, obliku, cijeni, datumu ugradnje i dali kuhinja ima šank ili nema. Na svakoj kuhinji zasebno, može se promjeniti sve stavke u području \"Akcija - Promjeni\" isto tako svaka kuhinja u ponudi se može kompletno obrisati."
         },
         {
             "ime": "Luna",
@@ -151,7 +151,7 @@ export default function AplikacijePolaznika() {
             "git": "https://github.com/annoookkkk",
             "url": "https://edunova18.origo.hr",
             "aplikacija": "Ian Farkaš APP",
-            "opis": "NAKNADNO"
+            "opis": "Osobna portfolio web aplikacije u Reactu za prikaz radova, nagrada i biografije, s filtreiranjem po kategoriji, administracijom (CRUD) projekata i nagrada uz provjeru unosa te pohranom u localStorage."
         }
     ]
 
@@ -212,7 +212,7 @@ export default function AplikacijePolaznika() {
             "git": "https://github.com/Svebor48",
             "url": "https://edunova32.origo.hr",
             "aplikacija": "Servis bicikala",
-            "opis": "NAKNADNO"
+            "opis": "Servis Bicikala je web aplikacija za evidenciju klijenata i radnih naloga u biciklističkom servisu. Omogućuje unos i uređivanje podataka, praćenje popravaka, cijena te statusa izvršenih servisa."
         },
         {
             "ime": "Borna",
@@ -300,7 +300,7 @@ export default function AplikacijePolaznika() {
             "git": "https://github.com/matkomance",
             "url": "https://edunova47.origo.hr",
             "aplikacija": "Naplata parkiranja Osijek",
-            "opis": "NAKNADNO"
+            "opis": "Naplata parkiranja Osijek je web aplikacija za evidenciju naplate parkiranja. Namijenjena je djelatniku koji evidentira naplate, vodi popis vozila i parkirnih zona te provodi provjeru istog."
         },
         {
             "ime": "Borna",

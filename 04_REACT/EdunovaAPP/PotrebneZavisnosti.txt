@@ -18,6 +18,9 @@ npm install @faker-js/faker
 npm install jspdf jspdf-autotable
 
 
+// za lordicon ikone
+npm install @lordicon/react
+
 
 // Zanimljivije zavisnosti
 "@popperjs/core": "^2.11.6",
