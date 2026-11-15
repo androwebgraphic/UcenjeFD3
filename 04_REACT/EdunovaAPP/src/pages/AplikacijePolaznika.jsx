@@ -103,7 +103,7 @@ export default function AplikacijePolaznika() {
             "git": "https://github.com/snjezanaskrinjar25-debug/personalizirani_pokloni",
             "url": "https://edunova25.origo.hr",
             "aplikacija": "Personalizirani pokloni",
-            "opis": "NAKNADNO"
+            "opis": "Personalizirani pokloni je web trgovina za personalizirane poklone. Izrađena je kao jednostranična (SPA) React aplikacija."
         },
         {
             "ime": "Toni",
@@ -135,7 +135,7 @@ export default function AplikacijePolaznika() {
             "git": "https://github.com/EverynZ/event-management",
             "url": "https://edunova15.origo.hr",
             "aplikacija": "Event-Management.app",
-            "opis": "NAKNADNO"
+            "opis": "Event-Management.app je web aplikacija za organizaciju vjenčanja, krštenja i rođendana. Izrađena je kao jednostranična (SPA) React aplikacija i namijenjena je organizatoru događaja."
         },
         {
             "ime": "Davor",
@@ -228,7 +228,7 @@ export default function AplikacijePolaznika() {
             "git": "https://github.com/tomislavg1980/EvidencijaRepromaterijala",
             "url": "https://edunova59.origo.hr",
             "aplikacija": "Evidencija repromaterijala",
-            "opis": "NAKNADNO"
+            "opis": "Evidencija repromaterijala je web aplikacija za vođenje popisa artikala repromaterijala (sirovine, pomoćni materijal, ambalaža) i prometa zaliha, tj. ulaza i izlaza tih artikala."
         },
         {
             "ime": "Marko",
@@ -241,10 +241,10 @@ export default function AplikacijePolaznika() {
         {
             "ime": "Mario",
             "prezime": "Dunić",
-            "git": "https://github.com/mdunic-dev",
+            "git": "https://github.com/mdunic-dev/mdunic-dev",
             "url": "https://edunova30.origo.hr",
-            "aplikacija": "NIJE DEFINIRANO",
-            "opis": "NAKNADNO"
+            "aplikacija": "Evidencija IT opreme",
+            "opis": "Evidencija IT opreme je web aplikacija za vođenje popisa informatičke opreme (računala, poslužitelji, pisači, mrežni uređaji) i servisnih intervencija na njoj"
         },
         {
             "ime": "Davor",
@@ -268,7 +268,7 @@ export default function AplikacijePolaznika() {
             "git": "https://github.com/dpapa",
             "url": "https://edunova36.origo.hr",
             "aplikacija": "NoWire Osijek",
-            "opis": "NAKNADNO"
+            "opis": "NoWire Osijek je web aplikacija za evidenciju korisnika i pretplata bežične mreže: tko je priključen na mrežu, koju pretplatu ima, je li plaćena i kada ističe."
         },
         {
             "ime": "Kristina",
@@ -284,7 +284,7 @@ export default function AplikacijePolaznika() {
             "git": "https://github.com/mateasnalcer/Task-Manager",
             "url": "https://edunova45.origo.hr",
             "aplikacija": "Smjene i zadaci",
-            "opis": "NAKNADNO"
+            "opis": "Smjene i zadaci je web aplikacija za evidenciju radnih smjena i zadataka koji se obavljaju tijekom pojedine smjene."
         },
         {
             "ime": "Nikola",
@@ -316,7 +316,7 @@ export default function AplikacijePolaznika() {
             "git": "https://github.com/CallMeDisco",
             "url": "https://edunova50.origo.hr",
             "aplikacija": "Praćenje projekata i zadataka",
-            "opis": "NAKNADNO"
+            "opis": "Praćenje projekata i zadataka je web aplikacija za vođenje projekata i njihovih zadataka. Izrađena je kao jednostranična (SPA) React aplikacija i namijenjena je voditelju projekata ili timu koji želi na jednom mjestu pratiti stanje projekata, rokove, odgovorne osobe i napredak izvršenja."
         },
         {
             "ime": "Pavel",
