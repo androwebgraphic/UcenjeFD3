@@ -5,7 +5,11 @@ import SmjerService from '../services/smjerovi/SmjerService';
 import PolaznikService from '../services/polaznici/PolaznikService';
 import GrupaService from '../services/grupe/GrupaService';
 import OperaterService from '../services/operateri/OperaterService';
-import { IME_APLIKACIJE } from '../constants';
+import { DATA_SOURCE, IME_APLIKACIJE } from '../constants';
+import { smjerovi } from '../services/smjerovi/SmjerPodaci';
+import { operateri } from '../services/operateri/OperaterPodaci';
+import { grupe } from '../services/grupe/GrupaPodaci';
+import { polaznici } from '../services/polaznici/PolaznikPodaci';
 
 
 export default function GeneriranjePodataka() {
@@ -343,6 +347,41 @@ export default function GeneriranjePodataka() {
     };
 
 
+const handleMemorijaULocalStorage = async () => {
+        if (!window.confirm('Jeste li sigurni da želite presipati sve podatke iz memorije u localStorage?')) {
+            return;
+        }
+
+        setLoading(true);
+        setPoruka(null);
+
+        try {
+
+            localStorage.removeItem('smjerovi')
+            localStorage.removeItem('polaznici')
+            localStorage.removeItem('grupe')
+            localStorage.removeItem('operateri')
+
+            localStorage.setItem('smjerovi', JSON.stringify(smjerovi))
+            localStorage.setItem('polaznici', JSON.stringify(polaznici))
+            localStorage.setItem('grupe', JSON.stringify(grupe))
+            localStorage.setItem('operateri', JSON.stringify(operateri))
+
+           
+            setPoruka({
+                tip: 'success',
+                tekst: `Uspješno presipano!`
+            });
+        } catch (error) {
+            setPoruka({
+                tip: 'danger',
+                tekst: 'Greška pri presipavanju podataka: ' + error.message
+            });
+        } finally {
+            setLoading(false);
+        }
+    };
+    
 
 
     return (
@@ -524,6 +563,32 @@ export default function GeneriranjePodataka() {
                 <strong>Oprez!</strong> Brisanje podataka je trajna akcija i ne može se poništiti.
             </Alert>
 
+
+
+
+
+            {DATA_SOURCE==='memorija' && (<>
+             <hr className="my-4" />
+
+            <h3>Presipavanje podataka</h3>
+            <p className="text-muted">
+                Koristite ove opcije za kopiranje iz jednog izvora u drugi.
+            </p>
+
+            <Row className="mt-3">
+                <Col md={3}>
+                    <Button
+                        variant="danger"
+                        onClick={handleMemorijaULocalStorage}
+                        disabled={loading}
+                        className="w-100 mb-2"
+                    >
+                        {loading ? 'Presipavanje...' : 'Presipaj'}
+                    </Button>
+                </Col>
+               
+            </Row>
+            </>)}   
           
 
         </Container>

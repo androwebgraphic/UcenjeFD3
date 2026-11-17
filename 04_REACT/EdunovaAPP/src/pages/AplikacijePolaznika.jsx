@@ -257,7 +257,7 @@ export default function AplikacijePolaznika() {
         {
             "ime": "Krunoslav",
             "prezime": "Pucek",
-            "git": "https://github.com/bosutsko",
+            "git": "https://github.com/bosutsko/bosutsko",
             "url": "https://edunova37.origo.hr",
             "aplikacija": "Nekretnine Online",
             "opis": "NAKNADNO"
@@ -265,7 +265,7 @@ export default function AplikacijePolaznika() {
         {
             "ime": "Dubravko",
             "prezime": "Papa",
-            "git": "https://github.com/dpapa",
+            "git": "https://github.com/dpapa/dpapa",
             "url": "https://edunova36.origo.hr",
             "aplikacija": "NoWire Osijek",
             "opis": "NoWire Osijek je web aplikacija za evidenciju korisnika i pretplata bežične mreže: tko je priključen na mrežu, koju pretplatu ima, je li plaćena i kada ističe."
