@@ -1,4 +1,5 @@
 import { DATA_SOURCE } from "../../constants"
+import PolaznikServiceFireBase from "./PolaznikServiceFireBase"
 import PolaznikServiceLocalStorage from "./PolaznikServiceLocalStorage"
 import PolaznikServiceMemorija from "./PolaznikServiceMemorija"
 
@@ -12,6 +13,9 @@ switch (DATA_SOURCE) {
     case 'localStorage':
         Servis = PolaznikServiceLocalStorage
         break
+    case 'firebase':
+        Servis = PolaznikServiceFireBase
+        break
     default:
         Servis = null
 }
@@ -23,7 +27,7 @@ const PrazanServis = {
     promijeni: async (sifra, smjer) => { console.error('Servis nije implementiran') },
     obrisi: async (sifra) => { console.error('Servis nije implementiran') },
     dohvatiStranicu: async (stranica, velicinaStranice, uvjetPretrazivanja) => ({ data: [], ukupnoStranica: 0, ukupnoStavki: 0 }),
-    spremiSliku: async(entitet) => ({})
+    spremiSliku: async (entitet) => ({})
 }
 
 const AktivniServis = Servis || PrazanServis
@@ -33,8 +37,8 @@ export default {
     get: () => AktivniServis.get(),
     dodaj: (smjer) => AktivniServis.dodaj(smjer),
     getBySifra: (sifra) => AktivniServis.getBySifra(sifra),
-    promijeni: (sifra, smjer) => AktivniServis.promijeni(sifra,smjer),
+    promijeni: (sifra, smjer) => AktivniServis.promijeni(sifra, smjer),
     obrisi: (sifra) => AktivniServis.obrisi(sifra),
-    dohvatiStranicu: (stranica, velicinaStranice, uvjetPretrazivanja) => AktivniServis.dohvatiStranicu(stranica, velicinaStranice,uvjetPretrazivanja),
+    dohvatiStranicu: (stranica, velicinaStranice, uvjetPretrazivanja) => AktivniServis.dohvatiStranicu(stranica, velicinaStranice, uvjetPretrazivanja),
     spremiSliku: (entitet) => AktivniServis.spremiSliku(entitet)
 }

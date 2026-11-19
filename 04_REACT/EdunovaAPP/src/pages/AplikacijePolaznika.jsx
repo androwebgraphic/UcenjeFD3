@@ -260,7 +260,7 @@ export default function AplikacijePolaznika() {
             "git": "https://github.com/bosutsko/bosutsko",
             "url": "https://edunova37.origo.hr",
             "aplikacija": "Nekretnine Online",
-            "opis": "NAKNADNO"
+            "opis": "Web aplikacija za oglašavanje nekretnina: kuće, vile, stanovi, zemljišta i poslovni prostori. Posjetitelji pregledavaju i filtriraju ponudu te šalju upite, a administrator uređuje nekretnine, kategorije i upite te generira XML za pretraživače i oglasne portale."
         },
         {
             "ime": "Dubravko",
@@ -292,7 +292,7 @@ export default function AplikacijePolaznika() {
             "git": "https://github.com/nperic22/apartmanija",
             "url": "https://edunova46.origo.hr",
             "aplikacija": "Rezervacije apartmana",
-            "opis": "NAKNADNO"
+            "opis": "Aplikacija za iznajmljivače apartmana: kalendar rezervacija, baza gostiju, prihodi i ciljevi, PDF izvještaji i podsjetnici."
         },
         {
             "ime": "Matko",
@@ -313,7 +313,7 @@ export default function AplikacijePolaznika() {
         {
             "ime": "Borna",
             "prezime": "Bednjički",
-            "git": "https://github.com/CallMeDisco",
+            "git": "https://github.com/CallMeDisco/projekti-zadaci",
             "url": "https://edunova50.origo.hr",
             "aplikacija": "Praćenje projekata i zadataka",
             "opis": "Praćenje projekata i zadataka je web aplikacija za vođenje projekata i njihovih zadataka. Izrađena je kao jednostranična (SPA) React aplikacija i namijenjena je voditelju projekata ili timu koji želi na jednom mjestu pratiti stanje projekata, rokove, odgovorne osobe i napredak izvršenja."

@@ -133,7 +133,7 @@ export default function GrupaPromjena() {
 
         promijeni({
             naziv: podaci.get('naziv'),
-            smjer: parseInt(podaci.get('smjer')),
+            smjer: podaci.get('smjer'),
             polaznici: odabraniPolaznici.map(p => p.sifra)
         })
     }
@@ -180,7 +180,7 @@ export default function GrupaPromjena() {
                                         <Form.Label className="fw-bold">Smjer</Form.Label>
                                         <Form.Select name="smjer"
                                             value={grupa.smjer || ''}
-                                            onChange={(e) => setGrupa({ ...grupa, smjer: parseInt(e.target.value) })} isInvalid={!!errors.smjer}
+                                            onChange={(e) => setGrupa({ ...grupa, smjer: e.target.value })} isInvalid={!!errors.smjer}
                                             onFocus={() => ocistiGresku('smjer')}>
                                             <option value="">Odaberite smjer</option>
                                             {smjerovi && smjerovi.map((smjer) => (
